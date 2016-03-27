@@ -5,3 +5,8 @@
 *.class
 .gradle
 .settings
+.idea/
+gradlew.bat
+gradlew
+gradle/
+board-games.iml
