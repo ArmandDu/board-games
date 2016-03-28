@@ -44,4 +44,14 @@ public class TestPlayers implements Players {
     return null;
   }
 
+  @Override
+  public Player getStartingPlayer() {
+    return null;
+  }
+
+  @Override
+  public void setStartingPlayer(StoneColor color) {
+
+  }
+
 }

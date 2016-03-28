@@ -16,8 +16,12 @@ public class TestGomokuStoneMove implements StoneMove {
   private GomokuStone stone;
 
   public TestGomokuStoneMove(int x, int y) {
+   this(StoneColor.WHITE, x, y);
+  }
+
+  public TestGomokuStoneMove(StoneColor color, int x, int y) {
     this.suggested = new GomokuStonePosition(x, y);
-    this.stone = new GomokuStone(StoneColor.WHITE, -1, -1);
+    this.stone = new GomokuStone(color, -1, -1);
   }
 
   public StonePosition getCurrentPosition() {

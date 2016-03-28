@@ -1,24 +1,27 @@
-package resources.com.github.armanddu.boardgame.gomoku.board;
+package com.github.armanddu.boardgame.gomoku.board;
 
-import com.github.armanddu.boardgame.gomoku.board.GomokuBoardReader;
 import com.github.armanddu.boardgame.map.Board;
 import com.github.armanddu.boardgame.map.BoardReader;
+import com.github.armanddu.boardgame.rule.GameRules;
 import com.github.armanddu.boardgame.stone.Stone;
 import com.github.armanddu.boardgame.stone.StoneMove;
 import com.github.armanddu.boardgame.stone.StonePosition;
 
-public class TestGomokuBoardMap implements Board {
+public class GomokuBoard implements Board {
+
 
     private Stone[][] map;
     private int width;
     private int height;
-    private BoardReader reader;
+    private BoardReader manipulator;
+    private GameRules rules;
 
-    public TestGomokuBoardMap() {
-        this.width = 7;
-        this.height = 7;
+    public GomokuBoard(GameRules rules) {
+        this.width = 19;
+        this.height = 19;
+        this.rules = rules;
         this.map = new Stone[this.width][this.height];
-        this.reader = new GomokuBoardReader(this);
+        this.manipulator = new GomokuBoardReader(this);
     }
 
     public Stone get(int x, int y) {
@@ -29,9 +32,12 @@ public class TestGomokuBoardMap implements Board {
     }
 
     @Override
-    public void set(int i, int j, Stone stone) {
-        map[i][j] = stone;
+    public void set(int x, int y, Stone stone) {
+        if (isInBoundaries(x, y)) {
+            put(x, y, stone);
+        }
     }
+
 
     public int getWidth() {
         return this.width;
@@ -42,23 +48,29 @@ public class TestGomokuBoardMap implements Board {
     }
 
     public boolean isValidMove(StoneMove stoneMove) {
-        return true;
+        return this.rules.isValidMove(this.getMap(), stoneMove);
     }
 
     public StoneMove applyMove(StoneMove stoneMove) {
-        StonePosition suggestedPosition = stoneMove.getSuggestedPosition();
-        Stone stone = stoneMove.getStone();
-        put(suggestedPosition, stone);
-        stone.apply(suggestedPosition);
-        return stoneMove;
+        if (this.isValidMove(stoneMove)) {
+            StonePosition suggestedPosition = stoneMove.getSuggestedPosition();
+            Stone stone = stoneMove.getStone();
+            put(suggestedPosition, stone);
+            stone.apply(suggestedPosition);
+            return stoneMove;
+        }
+        return  null;
     }
 
     private void put(StonePosition suggestedPosition, Stone stone) {
-        this.map[suggestedPosition.getX()][suggestedPosition.getY()] = stone;
+        put(suggestedPosition.getX(), suggestedPosition.getY(), stone);
+    }
+    private void put(int x, int y, Stone stone) {
+        this.map[x][y] = stone;
     }
 
     public BoardReader getMap() {
-        return this.reader;
+        return this.manipulator;
     }
 
     private boolean isInBoundaries(int x, int y) {

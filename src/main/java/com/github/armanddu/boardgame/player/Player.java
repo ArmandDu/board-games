@@ -13,7 +13,7 @@ public interface Player {
 
   List<StonePack> chooseStonePack(List<StonePack> stonePacks);
 
-  Player chooseOponent(List<Player> oponents);
+  Player chooseOpponent(List<Player> opponents);
 
   StonePack getStonePack();
 

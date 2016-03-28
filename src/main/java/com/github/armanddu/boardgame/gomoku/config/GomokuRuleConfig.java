@@ -2,7 +2,7 @@ package com.github.armanddu.boardgame.gomoku.config;
 
 import java.util.Map;
 
-import com.github.armanddu.boardgame.config.RuleConfig;
+import com.github.armanddu.boardgame.rule.config.RuleConfig;
 import com.github.armanddu.boardgame.gomoku.board.GomokuGameManager;
 import com.github.armanddu.boardgame.rule.ConfigRule;
 

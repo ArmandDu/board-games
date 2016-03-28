@@ -5,20 +5,25 @@ import java.util.Map;
 
 import com.github.armanddu.boardgame.stone.StoneColor;
 
+/** Players interface
+ *
+ */
 public interface Players {
 
-  void setWhite(Player player1);
+    void setWhite(Player player1);
 
-  void setBlack(Player player2);
+    void setBlack(Player player2);
 
-  Player getWhite();
+    Player getWhite();
 
-  Player getBlack();
+    Player getBlack();
 
-  List<Player> asList();
+    List<Player> asList();
 
-  Map<StoneColor, Player> asMap();
+    Map<StoneColor, Player> asMap();
 
-  Player get(StoneColor color);
+    Player get(StoneColor color);
 
+    Player getStartingPlayer();
+    void setStartingPlayer(StoneColor color);
 }

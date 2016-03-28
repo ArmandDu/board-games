@@ -29,7 +29,7 @@ public class TestPlayer implements Player {
     return null;
   }
 
-  public Player chooseOponent(List<Player> oponents) {
+  public Player chooseOpponent(List<Player> opponents) {
     // TODO Auto-generated method stub
     return null;
   }

@@ -3,7 +3,7 @@ package com.github.armanddu.boardgame.gomoku.board;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.github.armanddu.boardgame.config.RuleConfig;
+import com.github.armanddu.boardgame.rule.config.RuleConfig;
 import com.github.armanddu.boardgame.game.GameBox;
 import com.github.armanddu.boardgame.game.GameManager;
 import com.github.armanddu.boardgame.gomoku.rules.GomokuRules;
@@ -20,7 +20,7 @@ public class GomokuBox implements GameBox {
 
   public GomokuBox() {
     this.rules = new GomokuRules();
-    this.board = new GomokuBoardMap(rules);
+    this.board = new GomokuBoard(rules);
     stonePacks = new ArrayList<StonePack>();
     GomokuGameManager manager = new GomokuGameManager(null, this);
     RuleConfig config = rules.getConfig();

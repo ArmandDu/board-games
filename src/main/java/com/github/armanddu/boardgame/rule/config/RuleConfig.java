@@ -1,4 +1,4 @@
-package com.github.armanddu.boardgame.config;
+package com.github.armanddu.boardgame.rule.config;
 
 import com.github.armanddu.boardgame.gomoku.board.GomokuGameManager;
 

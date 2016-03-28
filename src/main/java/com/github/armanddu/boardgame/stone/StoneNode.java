@@ -1,14 +1,15 @@
 package com.github.armanddu.boardgame.stone;
 
-import java.util.Collection;
 import java.util.List;
-
-import com.github.armanddu.boardgame.stone.Stone;
+import java.util.Map;
 
 public interface StoneNode {
 
-  List<List<Stone>> getAll();
+  List<List<Stone>> getThreats();
 
-  int getWeight();
+  List<List<Stone>> geCaptures();
 
+  Map<String,List<Stone>> getAll();
+
+  boolean hasWeight(int i);
 }

@@ -153,7 +153,7 @@ public class TDD {
 
     String t_name = player.getName();
     List<StonePack> remaining = player.chooseStonePack(stonePacks);
-    Player t_oponent = player.chooseOponent(oponents);
+    Player t_oponent = player.chooseOpponent(oponents);
     StonePack t_pack = player.getStonePack();
     StoneColor t_color = player.getStoneColor();
     assertEquals(name, t_name);

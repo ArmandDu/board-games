@@ -7,13 +7,15 @@ public interface Board {
 
   Stone get(int x, int y);
 
+  void set(int i, int j, Stone stone);
+
   int getWidth();
 
   int getHeight();
 
   boolean isValidMove(StoneMove stoneMove);
 
-  void applyMove(StoneMove stoneMove);
+  StoneMove applyMove(StoneMove stoneMove);
 
   BoardReader getMap();
 

@@ -8,8 +8,7 @@ import com.github.armanddu.boardgame.stone.StonePosition;
 public class GomokuDrawRule implements EndGameRule {
 
   public String asString() {
-    // TODO Auto-generated method stub
-    return null;
+    return "Draw Rule: the game is drawn if the map is full";
   }
 
   public boolean isValid(BoardReader map, StoneMove stoneMove) {

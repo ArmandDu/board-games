@@ -12,6 +12,11 @@ public class TestBoard implements Board {
     return null;
   }
 
+  @Override
+  public void set(int i, int j, Stone stone) {
+
+  }
+
   public int getWidth() {
     // TODO Auto-generated method stub
     return 0;
@@ -32,9 +37,9 @@ public class TestBoard implements Board {
     return false;
   }
 
-  public void applyMove(StoneMove stoneMove) {
+  public StoneMove applyMove(StoneMove stoneMove) {
     // TODO Auto-generated method stub
-
+    return null;
   }
 
   public BoardReader getMap() {

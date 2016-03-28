@@ -1,6 +1,6 @@
 package resources.com.github.armanddu.boardgame.rule;
 
-import com.github.armanddu.boardgame.config.RuleConfig;
+import com.github.armanddu.boardgame.rule.config.RuleConfig;
 import com.github.armanddu.boardgame.game.GameManager;
 import com.github.armanddu.boardgame.map.BoardReader;
 import com.github.armanddu.boardgame.rule.GameRules;

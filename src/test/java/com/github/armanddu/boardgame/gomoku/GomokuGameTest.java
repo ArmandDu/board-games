@@ -14,7 +14,7 @@ import java.util.List;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-public class GomokuTest {
+public class GomokuGameTest {
 
   @Test
   public void GomokuGameTest() {

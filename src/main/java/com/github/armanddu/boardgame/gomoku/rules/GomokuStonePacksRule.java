@@ -13,10 +13,7 @@ import com.github.armanddu.boardgame.stone.StoneType;
 public class GomokuStonePacksRule implements ConfigRule {
 
   public String asString() {
-    StringBuilder builder = new StringBuilder();
-    builder.append("Stone Packs Rule:").append("\t");
-    builder.append("Packs of BLACK and WHITE Stones with unlimited amount.");
-    return builder.toString();
+    return "Stone Packs Rule:" + "\t" + "Packs of BLACK and WHITE Stones with unlimited amount.";
   }
 
   public boolean isValid(GameManager config) {

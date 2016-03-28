@@ -11,12 +11,12 @@ import resources.com.github.armanddu.boardgame.rule.TestGameRules;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
-public class GomokuBoardMapTest {
+public class GomokuBoardTest {
 
   @Test
   public void test() {
     GameRules rules = new TestGameRules(null);
-    Board map = new GomokuBoardMap(rules);
+    Board map = new GomokuBoard(rules);
     BoardReader manipulator = map.getMap();
 
     assertEquals(19, map.getHeight());

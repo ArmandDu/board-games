@@ -7,6 +7,7 @@ import com.github.armanddu.boardgame.game.GameBox;
 import com.github.armanddu.boardgame.game.Game;
 import com.github.armanddu.boardgame.player.Player;
 import com.github.armanddu.boardgame.referee.Referee;
+import com.github.armanddu.boardgame.stone.StoneMove;
 
 public class GomokuGame implements Game {
 
@@ -67,7 +68,7 @@ public class GomokuGame implements Game {
     referee.initGame(this.gameBox, this.player, this.opponents);
     while (!referee.isEndGame()) {
       referee.updateGame();
-      // TODO broadcaster.update();
+      broadcaster.broadcast(gameBox.getBoard().getMap(), referee.getLastMove());
     }
     this.ended = referee.isEndGame();
   }

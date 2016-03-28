@@ -14,6 +14,13 @@ import com.github.armanddu.boardgame.stone.StoneMove;
 public class GomokuDrawRuleTest {
 
     @Test
+    public void canHaveRuleAsString()
+    {
+        EndGameRule rule = new GomokuDrawRule();
+        assertNotNull(rule.asString());
+    }
+
+    @Test
     public void drawRuleShouldReturnFalseIfMapIsEmpty() {
         Board map = new TestGomokuBoardMap();
         map.setHeight(2);

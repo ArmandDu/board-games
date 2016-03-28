@@ -12,44 +12,56 @@ import com.github.armanddu.boardgame.stone.StoneColor;
 public class GomokuPlayers implements Players {
 
 
-  private Map<StoneColor, Player> players;
+    private Map<StoneColor, Player> players;
+    private StoneColor starting;
 
-  public GomokuPlayers(Player player, Player opponent) {
-    this();
-    this.players.put(player.getStoneColor(), player);
-    this.players.put(opponent.getStoneColor(), opponent);
-  }
+    public GomokuPlayers(Player player, Player opponent) {
+        this();
+        this.players.put(player.getStoneColor(), player);
+        this.players.put(opponent.getStoneColor(), opponent);
+    }
 
-  public GomokuPlayers() {
-    this.players = new HashMap<StoneColor, Player>();
-  }
+    public GomokuPlayers() {
+        this.players = new HashMap<>();
+        this.starting = StoneColor.BLACK;
+    }
 
-  public void setWhite(Player player) {
-    this.players.put(StoneColor.WHITE, player);
-  }
+    public void setWhite(Player player) {
+        this.players.put(StoneColor.WHITE, player);
+    }
 
-  public void setBlack(Player player) {
-    this.players.put(StoneColor.BLACK, player);
-  }
+    public void setBlack(Player player) {
+        this.players.put(StoneColor.BLACK, player);
+    }
 
-  public Player getWhite() {
-    return this.players.getOrDefault(StoneColor.WHITE, null);
-  }
+    public Player getWhite() {
+        return this.players.getOrDefault(StoneColor.WHITE, null);
+    }
 
-  public Player getBlack() {
-    return this.players.getOrDefault(StoneColor.BLACK, null);
-  }
+    public Player getBlack() {
+        return this.players.getOrDefault(StoneColor.BLACK, null);
+    }
 
-  public List<Player> asList() {
-    return new ArrayList<Player>(this.players.values());
-  }
+    public List<Player> asList() {
+        return new ArrayList<>(this.players.values());
+    }
 
-  public Map<StoneColor, Player> asMap() {
-    return this.players;
-  }
+    public Map<StoneColor, Player> asMap() {
+        return this.players;
+    }
 
-  public Player get(StoneColor color) {
-    return this.players.getOrDefault(color, null);
-  }
+    public Player get(StoneColor color) {
+        return this.players.getOrDefault(color, null);
+    }
+
+    @Override
+    public Player getStartingPlayer() {
+        return players.get(starting);
+    }
+
+    @Override
+    public void setStartingPlayer(StoneColor color) {
+        starting = color;
+    }
 
 }

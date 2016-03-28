@@ -35,7 +35,7 @@ public class GomokuGameManager implements GameManager {
   }
 
   public void applyMove(StoneMove stoneMove) {
-    this.board.applyMove(stoneMove);
+    lastMove = this.board.applyMove(stoneMove);
   }
 
   public void applyCaptures(StoneMove stoneMove) {
@@ -45,8 +45,7 @@ public class GomokuGameManager implements GameManager {
   }
 
   public Player getStartingPlayer() {
-    // TODO Auto-generated method stub
-    return null;
+    return this.players.getStartingPlayer();
   }
 
   public Players getPlayers() {
@@ -76,8 +75,7 @@ public class GomokuGameManager implements GameManager {
   }
 
   public void setMap(int i, int j, Stone stone) {
-    // TODO Auto-generated method stub
-
+    getBoard().set(i, j, stone);
   }
 
   public BoardReader getMap() {

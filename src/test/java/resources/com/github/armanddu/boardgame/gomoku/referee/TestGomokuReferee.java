@@ -55,8 +55,8 @@ public class TestGomokuReferee implements Referee {
   }
 
   public void updateGame() {
-    // TODO Auto-generated method stub
 
+    // TODO Auto-generated method stub
   }
 
   public boolean isValidGame() {
