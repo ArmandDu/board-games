@@ -2,13 +2,13 @@ package com.github.armanddu.boardgame.gomoku.rules;
 
 import java.util.List;
 
-import com.github.armanddu.boardgame.game.GameManager;
+import com.github.armanddu.boardgame.lib.game.GameManager;
 import com.github.armanddu.boardgame.gomoku.stone.GomokuStonePack;
 import com.github.armanddu.boardgame.gomoku.stone.GomokuStoneType;
-import com.github.armanddu.boardgame.rule.ConfigRule;
-import com.github.armanddu.boardgame.stone.StoneColor;
-import com.github.armanddu.boardgame.stone.StonePack;
-import com.github.armanddu.boardgame.stone.StoneType;
+import com.github.armanddu.boardgame.lib.rule.ConfigRule;
+import com.github.armanddu.boardgame.lib.stone.StoneColor;
+import com.github.armanddu.boardgame.lib.stone.StonePack;
+import com.github.armanddu.boardgame.lib.stone.StoneType;
 
 public class GomokuStonePacksRule implements ConfigRule {
 
@@ -20,9 +20,9 @@ public class GomokuStonePacksRule implements ConfigRule {
     List<StonePack> stonePacks = config.getStonePacks();
     GomokuStoneType type = new GomokuStoneType();
     return (!stonePacks.isEmpty() && stonePacks.size() == 2)
-        && (isValidColor(StoneColor.WHITE, stonePacks)
+            && (isValidColor(StoneColor.WHITE, stonePacks)
             && isValidColor(StoneColor.BLACK, stonePacks))
-        && (isValidType(type, stonePacks));
+            && (isValidType(type, stonePacks));
   }
 
   private boolean isValidType(GomokuStoneType type, List<StonePack> packs) {

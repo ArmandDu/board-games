@@ -2,12 +2,12 @@ package resources.com.github.armanddu.boardgame.gomoku.game;
 
 import java.util.List;
 
-import com.github.armanddu.boardgame.game.GameBox;
-import com.github.armanddu.boardgame.game.GameManager;
-import com.github.armanddu.boardgame.map.Board;
-import com.github.armanddu.boardgame.player.Players;
-import com.github.armanddu.boardgame.rule.GameRules;
-import com.github.armanddu.boardgame.stone.StonePack;
+import com.github.armanddu.boardgame.lib.game.GameBox;
+import com.github.armanddu.boardgame.lib.game.GameManager;
+import com.github.armanddu.boardgame.lib.board.Board;
+import com.github.armanddu.boardgame.lib.player.Players;
+import com.github.armanddu.boardgame.lib.rule.GameRules;
+import com.github.armanddu.boardgame.lib.stone.StonePack;
 
 public class TestGomokuGameBox implements GameBox {
 

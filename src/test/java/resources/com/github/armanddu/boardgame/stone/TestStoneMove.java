@@ -1,7 +1,7 @@
 package resources.com.github.armanddu.boardgame.stone;
 
-import com.github.armanddu.boardgame.player.Player;
-import com.github.armanddu.boardgame.stone.*;
+import com.github.armanddu.boardgame.lib.player.Player;
+import com.github.armanddu.boardgame.lib.stone.*;
 
 public class TestStoneMove implements StoneMove {
 

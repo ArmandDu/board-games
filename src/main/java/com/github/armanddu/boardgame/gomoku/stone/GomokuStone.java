@@ -3,28 +3,28 @@ package com.github.armanddu.boardgame.gomoku.stone;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.github.armanddu.boardgame.player.Player;
-import com.github.armanddu.boardgame.stone.Stone;
-import com.github.armanddu.boardgame.stone.StoneColor;
-import com.github.armanddu.boardgame.stone.StonePosition;
-import com.github.armanddu.boardgame.stone.StoneStatus;
-import com.github.armanddu.boardgame.stone.StoneType;
+import com.github.armanddu.boardgame.lib.player.Player;
+import com.github.armanddu.boardgame.lib.stone.Stone;
+import com.github.armanddu.boardgame.lib.stone.StoneColor;
+import com.github.armanddu.boardgame.lib.stone.StonePosition;
+import com.github.armanddu.boardgame.lib.stone.StoneStatus;
+import com.github.armanddu.boardgame.lib.stone.StoneType;
 
 public class GomokuStone implements Stone {
 
+  private final List<StonePosition> history;
+  private final StoneType type;
+  private final StoneColor color;
+  private final StoneStatus status;
   private StonePosition position;
-  private List<StonePosition> history;
   private Player owner;
-  private StoneType type;
-  private StoneColor color;
-  private StoneStatus status;
 
   public GomokuStone(StoneColor color, int x, int y) {
     this.type = new GomokuStoneType();
     this.color = color;
     this.status = null;
     this.owner = null;
-    this.history = new ArrayList<StonePosition>();
+    this.history = new ArrayList<>();
     this.position = new GomokuStonePosition(x, y);
   }
 
@@ -71,11 +71,8 @@ public class GomokuStone implements Stone {
 
   @Override
   public String toString() {
-    StringBuilder builder = new StringBuilder();
 
-    builder.append("GomokuStone [").append(color).append("/").append(type.type()).append("] in position: ")
-        .append(getX()).append("/").append(getY());
-    return builder.toString();
+    return "GomokuStone [" + color + "/" + type.type() + "] in position: " + getX() + "/" + getY();
   }
 
 }

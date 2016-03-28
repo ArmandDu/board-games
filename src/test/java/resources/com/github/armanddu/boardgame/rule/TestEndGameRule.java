@@ -1,8 +1,8 @@
 package resources.com.github.armanddu.boardgame.rule;
 
-import com.github.armanddu.boardgame.map.BoardReader;
-import com.github.armanddu.boardgame.rule.EndGameRule;
-import com.github.armanddu.boardgame.stone.StoneMove;
+import com.github.armanddu.boardgame.lib.board.BoardReader;
+import com.github.armanddu.boardgame.lib.rule.EndGameRule;
+import com.github.armanddu.boardgame.lib.stone.StoneMove;
 
 public class TestEndGameRule implements EndGameRule {
 
@@ -11,7 +11,7 @@ public class TestEndGameRule implements EndGameRule {
     return null;
   }
 
-  public boolean isValid(BoardReader map, StoneMove stoneMove) {
+  public boolean isValid(BoardReader map, StoneMove move) {
     // TODO Auto-generated method stub
     return false;
   }

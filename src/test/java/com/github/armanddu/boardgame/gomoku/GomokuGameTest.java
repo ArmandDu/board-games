@@ -1,11 +1,11 @@
 package com.github.armanddu.boardgame.gomoku;
 
-import com.github.armanddu.boardgame.broadcaster.Broadcaster;
-import com.github.armanddu.boardgame.game.Game;
-import com.github.armanddu.boardgame.game.GameBox;
+import com.github.armanddu.boardgame.lib.broadcaster.Broadcaster;
+import com.github.armanddu.boardgame.lib.game.Game;
+import com.github.armanddu.boardgame.lib.game.GameBox;
 import com.github.armanddu.boardgame.gomoku.game.GomokuGame;
-import com.github.armanddu.boardgame.player.Player;
-import com.github.armanddu.boardgame.referee.Referee;
+import com.github.armanddu.boardgame.lib.player.Player;
+import com.github.armanddu.boardgame.lib.referee.Referee;
 import org.junit.Test;
 import resources.com.github.armanddu.boardgame.gomoku.referee.TestGomokuReferee;
 

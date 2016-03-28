@@ -1,6 +1,6 @@
 package com.github.armanddu.boardgame.gomoku.stone;
 
-import com.github.armanddu.boardgame.stone.StoneType;
+import com.github.armanddu.boardgame.lib.stone.StoneType;
 
 public class GomokuStoneType implements StoneType {
 

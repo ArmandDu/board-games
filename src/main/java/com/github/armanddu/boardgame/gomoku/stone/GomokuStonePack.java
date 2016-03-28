@@ -2,27 +2,27 @@ package com.github.armanddu.boardgame.gomoku.stone;
 
 import java.util.*;
 
-import com.github.armanddu.boardgame.stone.Stone;
-import com.github.armanddu.boardgame.stone.StoneColor;
-import com.github.armanddu.boardgame.stone.StonePack;
-import com.github.armanddu.boardgame.stone.StoneType;
+import com.github.armanddu.boardgame.lib.stone.Stone;
+import com.github.armanddu.boardgame.lib.stone.StoneColor;
+import com.github.armanddu.boardgame.lib.stone.StonePack;
+import com.github.armanddu.boardgame.lib.stone.StoneType;
 
 public class GomokuStonePack implements StonePack {
 
     private static final int UNSET_X = -1;
     private static final int UNSET_Y = -1;
     private static final int UNLIMITED = -1;
-    private Map<StoneType, Integer> stones;
-    private StoneColor color;
+    private final Map<StoneType, Integer> stocks;
+    private final StoneColor color;
 
     public GomokuStonePack(StoneColor color) {
-        this.stones = new HashMap<>();
+        this.stocks = new HashMap<>();
         this.color = color;
-        this.stones.put(new GomokuStoneType(), UNLIMITED);
+        this.stocks.put(new GomokuStoneType(), UNLIMITED);
     }
 
     public boolean canUse(StoneType type) {
-        Integer quantity = stones.getOrDefault(type, 0);
+        Integer quantity = stocks.getOrDefault(type, 0);
         return quantity == UNLIMITED || quantity > 0;
     }
 
@@ -35,7 +35,7 @@ public class GomokuStonePack implements StonePack {
     }
 
     private void reduce(StoneType type) {
-        stones.entrySet().stream()
+        stocks.entrySet().stream()
                 .filter(set -> set.getKey().equals(type) && (set.getValue() != UNLIMITED) && (set.getValue() > 0))
                 .forEach(set -> set.setValue(set.getValue() - 1));
     }
@@ -45,11 +45,11 @@ public class GomokuStonePack implements StonePack {
     }
 
     public List<StoneType> getTypes() {
-        return new ArrayList<>(this.stones.keySet());
+        return new ArrayList<>(this.stocks.keySet());
     }
 
     public int getRemaining(StoneType type) {
-        Integer quantity = stones.getOrDefault(type, 0);
+        Integer quantity = stocks.getOrDefault(type, 0);
         return quantity == UNLIMITED ? 999_999  : quantity;
     }
 

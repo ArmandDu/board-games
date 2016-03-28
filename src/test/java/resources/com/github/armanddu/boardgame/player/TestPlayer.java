@@ -2,11 +2,11 @@ package resources.com.github.armanddu.boardgame.player;
 
 import java.util.List;
 
-import com.github.armanddu.boardgame.map.BoardReader;
-import com.github.armanddu.boardgame.player.Player;
-import com.github.armanddu.boardgame.stone.StoneColor;
-import com.github.armanddu.boardgame.stone.StoneMove;
-import com.github.armanddu.boardgame.stone.StonePack;
+import com.github.armanddu.boardgame.lib.board.BoardReader;
+import com.github.armanddu.boardgame.lib.player.Player;
+import com.github.armanddu.boardgame.lib.stone.StoneColor;
+import com.github.armanddu.boardgame.lib.stone.StoneMove;
+import com.github.armanddu.boardgame.lib.stone.StonePack;
 
 public class TestPlayer implements Player {
 
@@ -24,7 +24,7 @@ public class TestPlayer implements Player {
     this.name = name;
   }
 
-  public List<StonePack> chooseStonePack(List<StonePack> stonePacks) {
+  public List<StonePack> chooseStonePack(List<StonePack> packs) {
     // TODO Auto-generated method stub
     return null;
   }

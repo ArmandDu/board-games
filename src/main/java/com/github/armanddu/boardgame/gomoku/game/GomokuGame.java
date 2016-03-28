@@ -2,53 +2,32 @@ package com.github.armanddu.boardgame.gomoku.game;
 
 import java.util.List;
 
-import com.github.armanddu.boardgame.broadcaster.Broadcaster;
-import com.github.armanddu.boardgame.game.GameBox;
-import com.github.armanddu.boardgame.game.Game;
-import com.github.armanddu.boardgame.player.Player;
-import com.github.armanddu.boardgame.referee.Referee;
-import com.github.armanddu.boardgame.stone.StoneMove;
+import com.github.armanddu.boardgame.lib.broadcaster.Broadcaster;
+import com.github.armanddu.boardgame.lib.game.GameBox;
+import com.github.armanddu.boardgame.lib.game.Game;
+import com.github.armanddu.boardgame.lib.player.Player;
+import com.github.armanddu.boardgame.lib.referee.Referee;
 
 public class GomokuGame implements Game {
 
 
-  private GameBox gameBox;
-  private Referee referee;
-  private Player player;
-  private List<Player> opponents;
+  private final GameBox gameBox;
+  private final Referee referee;
+  private final Player player;
+  private final  List<Player> opponents;
+  private final Broadcaster broadcaster;
   private boolean started;
   private boolean ended;
-  private Broadcaster broadcaster;
 
   public GomokuGame(Referee referee, GameBox gameBox, Player player, List<Player> opponents,
-      Broadcaster broadcaster) {
-    this.setGameBox(gameBox);
-    this.setReferee(referee);
-    this.setPlayer(player);
-    this.setOpponents(opponents);
-    this.setBroadcaster(broadcaster);
+                    Broadcaster broadcaster) {
     this.started = false;
     this.ended = false;
-  }
-
-  private void setBroadcaster(Broadcaster broadcaster) {
-    this.broadcaster = broadcaster;
-  }
-
-  private void setOpponents(List<Player> opponents) {
-    this.opponents = opponents;
-  }
-
-  private void setPlayer(Player player) {
-    this.player = player;
-  }
-
-  private void setReferee(Referee referee) {
-    this.referee = referee;
-  }
-
-  private void setGameBox(GameBox gameBox) {
     this.gameBox = gameBox;
+    this.referee = referee;
+    this.player = player;
+    this.opponents = opponents;
+    this.broadcaster = broadcaster;
   }
 
   public boolean isValidRequirements() {

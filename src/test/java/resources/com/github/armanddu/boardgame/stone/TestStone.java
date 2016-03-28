@@ -1,9 +1,9 @@
 package resources.com.github.armanddu.boardgame.stone;
 
-import java.util.List;
+import com.github.armanddu.boardgame.lib.player.Player;
+import com.github.armanddu.boardgame.lib.stone.*;
 
-import com.github.armanddu.boardgame.player.Player;
-import com.github.armanddu.boardgame.stone.*;
+import java.util.List;
 
 public class TestStone implements Stone {
 

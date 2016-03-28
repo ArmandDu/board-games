@@ -4,9 +4,9 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import com.github.armanddu.boardgame.player.Player;
-import com.github.armanddu.boardgame.stone.Stone;
-import com.github.armanddu.boardgame.stone.StoneColor;
+import com.github.armanddu.boardgame.lib.player.Player;
+import com.github.armanddu.boardgame.lib.stone.Stone;
+import com.github.armanddu.boardgame.lib.stone.StoneColor;
 import resources.com.github.armanddu.boardgame.gomoku.player.TestGomokuPlayer;
 
 public class GomokuStoneTest {

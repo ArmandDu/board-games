@@ -1,11 +1,12 @@
 package resources.com.github.armanddu.boardgame.gomoku.board;
 
 import com.github.armanddu.boardgame.gomoku.board.GomokuBoardReader;
-import com.github.armanddu.boardgame.map.Board;
-import com.github.armanddu.boardgame.map.BoardReader;
-import com.github.armanddu.boardgame.stone.Stone;
-import com.github.armanddu.boardgame.stone.StoneMove;
-import com.github.armanddu.boardgame.stone.StonePosition;
+import com.github.armanddu.boardgame.lib.board.Board;
+import com.github.armanddu.boardgame.lib.board.BoardReader;
+import com.github.armanddu.boardgame.lib.stone.Stone;
+import com.github.armanddu.boardgame.lib.stone.StoneColor;
+import com.github.armanddu.boardgame.lib.stone.StoneMove;
+import com.github.armanddu.boardgame.lib.stone.StonePosition;
 
 public class TestGomokuBoardMap implements Board {
 
@@ -29,8 +30,8 @@ public class TestGomokuBoardMap implements Board {
     }
 
     @Override
-    public void set(int i, int j, Stone stone) {
-        map[i][j] = stone;
+    public void set(int x, int y, Stone stone) {
+        map[x][y] = stone;
     }
 
     public int getWidth() {
@@ -41,16 +42,16 @@ public class TestGomokuBoardMap implements Board {
         return this.height;
     }
 
-    public boolean isValidMove(StoneMove stoneMove) {
+    public boolean isValidMove(StoneMove move) {
         return true;
     }
 
-    public StoneMove applyMove(StoneMove stoneMove) {
-        StonePosition suggestedPosition = stoneMove.getSuggestedPosition();
-        Stone stone = stoneMove.getStone();
+    public StoneMove applyMove(StoneMove move) {
+        StonePosition suggestedPosition = move.getSuggestedPosition();
+        Stone stone = move.getStone();
         put(suggestedPosition, stone);
         stone.apply(suggestedPosition);
-        return stoneMove;
+        return move;
     }
 
     private void put(StonePosition suggestedPosition, Stone stone) {
@@ -73,6 +74,16 @@ public class TestGomokuBoardMap implements Board {
     public void setWidth(int width) {
         this.width = width;
         this.map = new Stone[this.width][this.height];
+    }
+
+    @Override
+    public int getScore(StoneColor color) {
+        return 0;
+    }
+
+    @Override
+    public void setScore(StoneColor color, int value) {
+
     }
 
 }

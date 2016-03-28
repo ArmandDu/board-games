@@ -1,8 +1,8 @@
 package resources.com.github.armanddu.boardgame.rule;
 
-import com.github.armanddu.boardgame.map.BoardReader;
-import com.github.armanddu.boardgame.rule.StoneRule;
-import com.github.armanddu.boardgame.stone.StoneMove;
+import com.github.armanddu.boardgame.lib.board.BoardReader;
+import com.github.armanddu.boardgame.lib.rule.StoneRule;
+import com.github.armanddu.boardgame.lib.stone.StoneMove;
 
 public class TestStoneRule implements StoneRule {
 
@@ -10,7 +10,7 @@ public class TestStoneRule implements StoneRule {
     return "Rule";
   }
 
-  public boolean isValid(BoardReader map, StoneMove stoneMove) {
+  public boolean isValid(BoardReader map, StoneMove move) {
     return true;
   }
 

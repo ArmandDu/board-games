@@ -1,9 +1,10 @@
 package resources.com.github.armanddu.boardgame.game;
 
-import com.github.armanddu.boardgame.map.Board;
-import com.github.armanddu.boardgame.map.BoardReader;
-import com.github.armanddu.boardgame.stone.Stone;
-import com.github.armanddu.boardgame.stone.StoneMove;
+import com.github.armanddu.boardgame.lib.board.Board;
+import com.github.armanddu.boardgame.lib.board.BoardReader;
+import com.github.armanddu.boardgame.lib.stone.Stone;
+import com.github.armanddu.boardgame.lib.stone.StoneColor;
+import com.github.armanddu.boardgame.lib.stone.StoneMove;
 
 public class TestMapManipulator implements BoardReader {
 
@@ -29,6 +30,11 @@ public class TestMapManipulator implements BoardReader {
   public boolean isValidMove(StoneMove stoneMove) {
     // TODO Auto-generated method stub
     return false;
+  }
+
+  @Override
+  public int getScore(StoneColor color) {
+    return 0;
   }
 
   public boolean isValidMove(int x, int y) {

@@ -2,10 +2,10 @@ package resources.com.github.armanddu.boardgame.gomoku.referee;
 
 import java.util.List;
 
-import com.github.armanddu.boardgame.game.GameBox;
-import com.github.armanddu.boardgame.player.Player;
-import com.github.armanddu.boardgame.referee.Referee;
-import com.github.armanddu.boardgame.stone.StoneMove;
+import com.github.armanddu.boardgame.lib.game.GameBox;
+import com.github.armanddu.boardgame.lib.player.Player;
+import com.github.armanddu.boardgame.lib.referee.Referee;
+import com.github.armanddu.boardgame.lib.stone.StoneMove;
 
 public class TestGomokuReferee implements Referee {
 
@@ -19,22 +19,22 @@ public class TestGomokuReferee implements Referee {
 
   }
 
-  public boolean isValidMove(StoneMove stoneMove) {
+  public boolean isValidMove(StoneMove move) {
     // TODO Auto-generated method stub
     return false;
   }
 
-  public boolean hasCaptures(StoneMove stoneMove) {
+  public boolean hasCaptures(StoneMove move) {
     // TODO Auto-generated method stub
     return false;
   }
 
-  public void applyMove(StoneMove stoneMove) {
+  public void applyMove(StoneMove move) {
     // TODO Auto-generated method stub
 
   }
 
-  public void applyCaptures(StoneMove stoneMove) {
+  public void applyCaptures(StoneMove move) {
     // TODO Auto-generated method stub
 
   }

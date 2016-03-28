@@ -1,6 +1,6 @@
 package resources.com.github.armanddu.boardgame.stone;
 
-import com.github.armanddu.boardgame.stone.StonePosition;
+import com.github.armanddu.boardgame.lib.stone.StonePosition;
 
 public class TestStonePosition implements StonePosition {
 

@@ -5,14 +5,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.github.armanddu.boardgame.player.Player;
-import com.github.armanddu.boardgame.player.Players;
-import com.github.armanddu.boardgame.stone.StoneColor;
+import com.github.armanddu.boardgame.lib.player.Player;
+import com.github.armanddu.boardgame.lib.player.Players;
+import com.github.armanddu.boardgame.lib.stone.StoneColor;
 
 public class GomokuPlayers implements Players {
 
 
-    private Map<StoneColor, Player> players;
+    private final Map<StoneColor, Player> players;
     private StoneColor starting;
 
     public GomokuPlayers(Player player, Player opponent) {
@@ -26,20 +26,8 @@ public class GomokuPlayers implements Players {
         this.starting = StoneColor.BLACK;
     }
 
-    public void setWhite(Player player) {
-        this.players.put(StoneColor.WHITE, player);
-    }
-
-    public void setBlack(Player player) {
-        this.players.put(StoneColor.BLACK, player);
-    }
-
-    public Player getWhite() {
-        return this.players.getOrDefault(StoneColor.WHITE, null);
-    }
-
-    public Player getBlack() {
-        return this.players.getOrDefault(StoneColor.BLACK, null);
+    public void set(Player player) {
+        this.players.put(player.getStoneColor(), player);
     }
 
     public List<Player> asList() {
@@ -52,6 +40,14 @@ public class GomokuPlayers implements Players {
 
     public Player get(StoneColor color) {
         return this.players.getOrDefault(color, null);
+    }
+
+    public Player getWhite() {
+        return get(StoneColor.WHITE);
+    }
+
+    public Player getBlack() {
+        return get(StoneColor.BLACK);
     }
 
     @Override

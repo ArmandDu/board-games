@@ -2,11 +2,11 @@ package resources.com.github.armanddu.boardgame.game;
 
 import java.util.List;
 
-import com.github.armanddu.boardgame.broadcaster.Broadcaster;
-import com.github.armanddu.boardgame.game.Game;
-import com.github.armanddu.boardgame.game.GameBox;
-import com.github.armanddu.boardgame.player.Player;
-import com.github.armanddu.boardgame.referee.Referee;
+import com.github.armanddu.boardgame.lib.broadcaster.Broadcaster;
+import com.github.armanddu.boardgame.lib.game.Game;
+import com.github.armanddu.boardgame.lib.game.GameBox;
+import com.github.armanddu.boardgame.lib.player.Player;
+import com.github.armanddu.boardgame.lib.referee.Referee;
 
 public class TestGame implements Game {
 

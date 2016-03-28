@@ -2,12 +2,12 @@ package com.github.armanddu.boardgame.gomoku.rules;
 
 import com.github.armanddu.boardgame.gomoku.stone.GomokuStone;
 import com.github.armanddu.boardgame.gomoku.stone.GomokuStoneNode;
-import com.github.armanddu.boardgame.stone.Stone;
-import com.github.armanddu.boardgame.stone.StoneNode;
-import com.github.armanddu.boardgame.map.BoardReader;
-import com.github.armanddu.boardgame.rule.EndGameRule;
-import com.github.armanddu.boardgame.stone.StoneMove;
-import com.github.armanddu.boardgame.stone.StonePosition;
+import com.github.armanddu.boardgame.lib.stone.Stone;
+import com.github.armanddu.boardgame.lib.stone.StoneNode;
+import com.github.armanddu.boardgame.lib.board.BoardReader;
+import com.github.armanddu.boardgame.lib.rule.EndGameRule;
+import com.github.armanddu.boardgame.lib.stone.StoneMove;
+import com.github.armanddu.boardgame.lib.stone.StonePosition;
 
 import java.util.List;
 
@@ -19,9 +19,9 @@ public class GomokuFiveInARowUnbreakableRule implements EndGameRule {
     }
 
     @Override
-    public boolean isValid(BoardReader map, StoneMove stoneMove) {
-        StonePosition position = stoneMove.getSuggestedPosition();
-        GomokuStone center = new GomokuStone(stoneMove.getColor(), position.getX(), position.getY());
+    public boolean isValid(BoardReader map, StoneMove move) {
+        StonePosition position = move.getSuggestedPosition();
+        GomokuStone center = new GomokuStone(move.getColor(), position.getX(), position.getY());
         StoneNode node = new GomokuStoneNode(map, center);
         return node.hasWeight(5) && hasNoThreat(node, map);
     }

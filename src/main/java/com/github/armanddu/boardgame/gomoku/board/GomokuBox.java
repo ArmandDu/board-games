@@ -3,25 +3,25 @@ package com.github.armanddu.boardgame.gomoku.board;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.github.armanddu.boardgame.rule.config.RuleConfig;
-import com.github.armanddu.boardgame.game.GameBox;
-import com.github.armanddu.boardgame.game.GameManager;
+import com.github.armanddu.boardgame.lib.rule.config.RuleConfig;
+import com.github.armanddu.boardgame.lib.game.GameBox;
+import com.github.armanddu.boardgame.lib.game.GameManager;
 import com.github.armanddu.boardgame.gomoku.rules.GomokuRules;
-import com.github.armanddu.boardgame.map.Board;
-import com.github.armanddu.boardgame.player.Players;
-import com.github.armanddu.boardgame.rule.GameRules;
-import com.github.armanddu.boardgame.stone.StonePack;
+import com.github.armanddu.boardgame.lib.board.Board;
+import com.github.armanddu.boardgame.lib.player.Players;
+import com.github.armanddu.boardgame.lib.rule.GameRules;
+import com.github.armanddu.boardgame.lib.stone.StonePack;
 
 public class GomokuBox implements GameBox {
 
-  private Board board;
-  private GameRules rules;
-  private List<StonePack> stonePacks;
+  private final Board board;
+  private final GameRules rules;
+  private final List<StonePack> stonePacks;
 
   public GomokuBox() {
     this.rules = new GomokuRules();
     this.board = new GomokuBoard(rules);
-    stonePacks = new ArrayList<StonePack>();
+    stonePacks = new ArrayList<>();
     GomokuGameManager manager = new GomokuGameManager(null, this);
     RuleConfig config = rules.getConfig();
     config.setStonePacks(manager);

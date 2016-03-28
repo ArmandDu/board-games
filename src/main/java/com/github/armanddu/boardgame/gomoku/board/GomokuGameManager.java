@@ -2,25 +2,25 @@ package com.github.armanddu.boardgame.gomoku.board;
 
 import java.util.List;
 
-import com.github.armanddu.boardgame.game.GameBox;
-import com.github.armanddu.boardgame.game.GameManager;
-import com.github.armanddu.boardgame.map.Board;
-import com.github.armanddu.boardgame.map.BoardReader;
-import com.github.armanddu.boardgame.player.Player;
-import com.github.armanddu.boardgame.player.Players;
-import com.github.armanddu.boardgame.rule.GameRules;
-import com.github.armanddu.boardgame.stone.Stone;
-import com.github.armanddu.boardgame.stone.StoneColor;
-import com.github.armanddu.boardgame.stone.StoneMove;
-import com.github.armanddu.boardgame.stone.StonePack;
+import com.github.armanddu.boardgame.lib.game.GameBox;
+import com.github.armanddu.boardgame.lib.game.GameManager;
+import com.github.armanddu.boardgame.lib.board.Board;
+import com.github.armanddu.boardgame.lib.board.BoardReader;
+import com.github.armanddu.boardgame.lib.player.Player;
+import com.github.armanddu.boardgame.lib.player.Players;
+import com.github.armanddu.boardgame.lib.rule.GameRules;
+import com.github.armanddu.boardgame.lib.stone.Stone;
+import com.github.armanddu.boardgame.lib.stone.StoneColor;
+import com.github.armanddu.boardgame.lib.stone.StoneMove;
+import com.github.armanddu.boardgame.lib.stone.StonePack;
 
 public class GomokuGameManager implements GameManager {
 
-  private Players players;
-  private Board board;
-  private GameRules rules;
+  private final Players players;
+  private final Board board;
+  private final GameRules rules;
+  private final List<StonePack> stonePacks;
   private StoneMove lastMove;
-  private List<StonePack> stonePacks;
 
   public GomokuGameManager(Players players, GameBox gameBox) {
     this.players = players;
@@ -34,12 +34,12 @@ public class GomokuGameManager implements GameManager {
     return this.board;
   }
 
-  public void applyMove(StoneMove stoneMove) {
-    lastMove = this.board.applyMove(stoneMove);
+  public void applyMove(StoneMove move) {
+    lastMove = this.board.applyMove(move);
   }
 
-  public void applyCaptures(StoneMove stoneMove) {
-    if (this.rules.hasCaptures(board.getMap(), stoneMove)) {
+  public void applyCaptures(StoneMove move) {
+    if (this.rules.hasCaptures(board.getMap(), move)) {
       // TODO Auto-generated method stub
     }
   }
@@ -61,7 +61,7 @@ public class GomokuGameManager implements GameManager {
     return this.lastMove;
   }
 
-  public void updateStatus(StoneMove stoneMove) {
+  public void updateStatus(StoneMove move) {
     // TODO Auto-generated method stub
 
   }
@@ -74,8 +74,8 @@ public class GomokuGameManager implements GameManager {
     this.getBoard().setHeight(height);
   }
 
-  public void setMap(int i, int j, Stone stone) {
-    getBoard().set(i, j, stone);
+  public void setMap(int x, int y, Stone stone) {
+    getBoard().set(x, y, stone);
   }
 
   public BoardReader getMap() {

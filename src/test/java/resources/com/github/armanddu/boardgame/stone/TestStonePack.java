@@ -1,10 +1,10 @@
 package resources.com.github.armanddu.boardgame.stone;
 
-import com.github.armanddu.boardgame.player.Player;
-import com.github.armanddu.boardgame.stone.Stone;
-import com.github.armanddu.boardgame.stone.StoneColor;
-import com.github.armanddu.boardgame.stone.StonePack;
-import com.github.armanddu.boardgame.stone.StoneType;
+import com.github.armanddu.boardgame.lib.player.Player;
+import com.github.armanddu.boardgame.lib.stone.Stone;
+import com.github.armanddu.boardgame.lib.stone.StoneColor;
+import com.github.armanddu.boardgame.lib.stone.StonePack;
+import com.github.armanddu.boardgame.lib.stone.StoneType;
 
 import java.util.List;
 

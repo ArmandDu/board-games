@@ -1,8 +1,8 @@
 package com.github.armanddu.boardgame.gomoku.rules;
 
-import com.github.armanddu.boardgame.game.GameManager;
-import com.github.armanddu.boardgame.map.BoardReader;
-import com.github.armanddu.boardgame.rule.ConfigRule;
+import com.github.armanddu.boardgame.lib.game.GameManager;
+import com.github.armanddu.boardgame.lib.board.BoardReader;
+import com.github.armanddu.boardgame.lib.rule.ConfigRule;
 
 public class GomokuInitialStonePositionRule implements ConfigRule {
 

@@ -2,19 +2,19 @@ package com.github.armanddu.boardgame.gomoku.stone;
 
 import java.util.*;
 
-import com.github.armanddu.boardgame.map.BoardReader;
-import com.github.armanddu.boardgame.stone.Stone;
-import com.github.armanddu.boardgame.stone.StoneColor;
-import com.github.armanddu.boardgame.stone.StoneNode;
+import com.github.armanddu.boardgame.lib.board.BoardReader;
+import com.github.armanddu.boardgame.lib.stone.Stone;
+import com.github.armanddu.boardgame.lib.stone.StoneColor;
+import com.github.armanddu.boardgame.lib.stone.StoneNode;
 
 public class GomokuStoneNode implements StoneNode{
 
-    private BoardReader map;
-    private Stone center;
-    private Map<String, List<Stone>> childs;
+    private final BoardReader map;
+    private final Stone center;
+    private final Map<String, List<Stone>> childs;
+    private final List<List<Stone>> threats;
+    private final List<List<Stone>> captures;
     private int weight;
-    private List<List<Stone>> threats;
-    private List<List<Stone>> captures;
 
     public GomokuStoneNode(BoardReader map, Stone center) {
         this.map = map;

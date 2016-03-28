@@ -1,90 +1,94 @@
 package resources.com.github.armanddu.boardgame.game;
 
-import com.github.armanddu.boardgame.game.GameBox;
-import com.github.armanddu.boardgame.game.GameManager;
-import com.github.armanddu.boardgame.map.Board;
-import com.github.armanddu.boardgame.map.BoardReader;
-import com.github.armanddu.boardgame.player.Player;
-import com.github.armanddu.boardgame.player.Players;
-import com.github.armanddu.boardgame.stone.Stone;
-import com.github.armanddu.boardgame.stone.StoneColor;
-import com.github.armanddu.boardgame.stone.StoneMove;
-import com.github.armanddu.boardgame.stone.StonePack;
+import com.github.armanddu.boardgame.lib.game.GameBox;
+import com.github.armanddu.boardgame.lib.game.GameManager;
+import com.github.armanddu.boardgame.lib.board.Board;
+import com.github.armanddu.boardgame.lib.board.BoardReader;
+import com.github.armanddu.boardgame.lib.player.Player;
+import com.github.armanddu.boardgame.lib.player.Players;
+import com.github.armanddu.boardgame.lib.stone.Stone;
+import com.github.armanddu.boardgame.lib.stone.StoneColor;
+import com.github.armanddu.boardgame.lib.stone.StoneMove;
+import com.github.armanddu.boardgame.lib.stone.StonePack;
 
 import java.util.List;
 
 public class TestGameManager implements GameManager {
 
-  public TestGameManager(GameBox gameBox, Players players) {
-  }
+    private Board board;
 
-  public TestGameManager() {
+    public TestGameManager(GameBox gameBox, Players players) {
+    }
 
-  }
+    public TestGameManager() {
 
-  public Board getBoard() {
-    // TODO Auto-generated method stub
-    return null;
-  }
+    }
 
-  public void applyMove(StoneMove stoneMove) {
-    // TODO Auto-generated method stub
-    
-  }
+    public TestGameManager(Board board) {
+        this.board = board;
+    }
 
-  public void applyCaptures(StoneMove stoneMove) {
-    // TODO Auto-generated method stub
-    
-  }
+    public Board getBoard() {
+        // TODO Auto-generated method stub
+        return board;
+    }
 
-  public Player getStartingPlayer() {
-    // TODO Auto-generated method stub
-    return null;
-  }
+    public void applyMove(StoneMove move) {
+        board.applyMove(move);
+    }
 
-  public Players getPlayers() {
-    // TODO Auto-generated method stub
-    return null;
-  }
+    public void applyCaptures(StoneMove move) {
+        // TODO Auto-generated method stub
 
-  public StoneColor getNextTurn() {
-    // TODO Auto-generated method stub
-    return null;
-  }
+    }
 
-  public StoneMove getLastMove() {
-    // TODO Auto-generated method stub
-    return null;
-  }
+    public Player getStartingPlayer() {
+        // TODO Auto-generated method stub
+        return null;
+    }
 
-  public void updateStatus(StoneMove stoneMove) {
-    // TODO Auto-generated method stub
-    
-  }
+    public Players getPlayers() {
+        // TODO Auto-generated method stub
+        return null;
+    }
 
-  public void setMapWidth(int width) {
-    // TODO Auto-generated method stub
-    
-  }
+    public StoneColor getNextTurn() {
+        // TODO Auto-generated method stub
+        return null;
+    }
 
-  public void setMapHeight(int height) {
-    // TODO Auto-generated method stub
-    
-  }
+    public StoneMove getLastMove() {
+        // TODO Auto-generated method stub
+        return null;
+    }
 
-  public void setMap(int i, int j, Stone stone) {
-    // TODO Auto-generated method stub
-    
-  }
+    public void updateStatus(StoneMove move) {
+        // TODO Auto-generated method stub
 
-  public BoardReader getMap() {
-    // TODO Auto-generated method stub
-    return null;
-  }
+    }
 
-  @Override
-  public List<StonePack> getStonePacks() {
-    return null;
-  }
+    public void setMapWidth(int width) {
+        // TODO Auto-generated method stub
+
+    }
+
+    public void setMapHeight(int height) {
+        // TODO Auto-generated method stub
+
+    }
+
+    public void setMap(int i, int j, Stone stone) {
+        board.set(i, j, stone);
+    }
+
+    public BoardReader getMap() {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public List<StonePack> getStonePacks() {
+        return null;
+    }
 
 }

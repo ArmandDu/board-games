@@ -6,10 +6,10 @@ import org.junit.Test;
 
 import resources.com.github.armanddu.boardgame.gomoku.board.TestGomokuBoardMap;
 import resources.com.github.armanddu.boardgame.gomoku.stone.TestGomokuStoneMove;
-import com.github.armanddu.boardgame.map.Board;
-import com.github.armanddu.boardgame.map.BoardReader;
-import com.github.armanddu.boardgame.rule.EndGameRule;
-import com.github.armanddu.boardgame.stone.StoneMove;
+import com.github.armanddu.boardgame.lib.board.Board;
+import com.github.armanddu.boardgame.lib.board.BoardReader;
+import com.github.armanddu.boardgame.lib.rule.EndGameRule;
+import com.github.armanddu.boardgame.lib.stone.StoneMove;
 
 public class GomokuDrawRuleTest {
 

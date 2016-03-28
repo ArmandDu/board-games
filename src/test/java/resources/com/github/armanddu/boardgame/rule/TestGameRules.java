@@ -1,11 +1,11 @@
 package resources.com.github.armanddu.boardgame.rule;
 
-import com.github.armanddu.boardgame.rule.config.RuleConfig;
-import com.github.armanddu.boardgame.game.GameManager;
-import com.github.armanddu.boardgame.map.BoardReader;
-import com.github.armanddu.boardgame.rule.GameRules;
-import com.github.armanddu.boardgame.rule.Rule;
-import com.github.armanddu.boardgame.stone.StoneMove;
+import com.github.armanddu.boardgame.lib.rule.config.RuleConfig;
+import com.github.armanddu.boardgame.lib.game.GameManager;
+import com.github.armanddu.boardgame.lib.board.BoardReader;
+import com.github.armanddu.boardgame.lib.rule.GameRules;
+import com.github.armanddu.boardgame.lib.rule.Rule;
+import com.github.armanddu.boardgame.lib.stone.StoneMove;
 
 public class TestGameRules implements GameRules {
 
@@ -73,32 +73,32 @@ public class TestGameRules implements GameRules {
     return true;
   }
 
-  public boolean isValidMove(BoardReader map, StoneMove stoneMove) {
+  public boolean isValidMove(BoardReader map, StoneMove move) {
     // TODO Auto-generated method stub
     return true;
   }
 
-  public boolean hasCaptures(BoardReader map, StoneMove stoneMove) {
+  public boolean hasCaptures(BoardReader map, StoneMove move) {
     // TODO Auto-generated method stub
     return true;
   }
 
-  public boolean shouldChangeTurn(BoardReader map, StoneMove stoneMove) {
+  public boolean shouldChangeTurn(BoardReader map, StoneMove move) {
     // TODO Auto-generated method stub
     return true;
   }
 
-  public boolean isEndGame(BoardReader map, StoneMove stoneMove) {
+  public boolean isEndGame(BoardReader map, StoneMove move) {
     // TODO Auto-generated method stub
     return true;
   }
 
-  public boolean isWin(BoardReader map, StoneMove stoneMove) {
+  public boolean isWin(BoardReader map, StoneMove move) {
     // TODO Auto-generated method stub
     return true;
   }
 
-  public boolean isDraw(BoardReader map, StoneMove stoneMove) {
+  public boolean isDraw(BoardReader map, StoneMove move) {
     // TODO Auto-generated method stub
     return true;
   }
