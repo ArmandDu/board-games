@@ -2,6 +2,7 @@ package com.github.armanddu.boardgame.gomoku.referee;
 
 import java.util.List;
 
+import com.github.armanddu.boardgame.gomoku.stone.GomokuStoneMove;
 import com.github.armanddu.boardgame.lib.game.GameBox;
 import com.github.armanddu.boardgame.lib.game.GameManager;
 import com.github.armanddu.boardgame.gomoku.player.GomokuPlayers;
@@ -10,6 +11,7 @@ import com.github.armanddu.boardgame.lib.player.Player;
 import com.github.armanddu.boardgame.lib.player.Players;
 import com.github.armanddu.boardgame.lib.referee.Referee;
 import com.github.armanddu.boardgame.lib.rule.GameRules;
+import com.github.armanddu.boardgame.lib.stone.Stone;
 import com.github.armanddu.boardgame.lib.stone.StoneColor;
 import com.github.armanddu.boardgame.lib.stone.StoneMove;
 import com.github.armanddu.boardgame.lib.stone.StonePack;
@@ -43,15 +45,15 @@ public class GomokuReferee implements Referee {
     }
 
     public void applyMove(StoneMove move) {
-        this.manager.applyMove(move);
+        this.manager.getBoard().applyMove(move);
     }
 
     public void applyCaptures(StoneMove move) {
-        this.manager.applyCaptures(move);
+        // TODO :)
     }
 
     public void initStartingPlayer() {
-        this.current = this.manager.getStartingPlayer().getStoneColor();
+        this.current = this.manager.getPlayers().getStartingPlayer().getStoneColor();
     }
 
     public void setNextPlayerTurn() {
@@ -80,7 +82,8 @@ public class GomokuReferee implements Referee {
     }
 
     public StoneMove getLastMove() {
-        return this.manager.getLastMove();
+        Stone stone = this.manager.getBoard().getLastStone();
+        return  new GomokuStoneMove(stone, stone.getX(), stone.getY());
     }
 
     private void setManager(GameManager manager) {

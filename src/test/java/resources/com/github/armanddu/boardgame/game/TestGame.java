@@ -17,7 +17,7 @@ public class TestGame implements Game {
     this.started = false;
   }
 
-  public boolean isValidRequirements() {
+  public boolean isValid() {
     return true;
   }
 

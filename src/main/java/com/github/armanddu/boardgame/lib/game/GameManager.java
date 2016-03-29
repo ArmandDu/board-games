@@ -13,30 +13,16 @@ import com.github.armanddu.boardgame.lib.stone.StonePack;
 
 public interface GameManager {
 
-  Board getBoard();
+    Board getBoard();
 
-  void applyMove(StoneMove move);
+    BoardReader getMap();
 
-  void applyCaptures(StoneMove move);
+    Players getPlayers();
 
-  Player getStartingPlayer();
+    StoneColor getNextTurn();
 
-  Players getPlayers();
+    void updateStatus(StoneMove move);
 
-  StoneColor getNextTurn();
-
-  StoneMove getLastMove();
-
-  void updateStatus(StoneMove move);
-
-  void setMapWidth(int width);
-
-  void setMapHeight(int height);
-
-  void setMap(int i, int j, Stone stone);
-
-  BoardReader getMap();
-
-  List<StonePack> getStonePacks();
+    List<StonePack> getStonePacks();
 
 }

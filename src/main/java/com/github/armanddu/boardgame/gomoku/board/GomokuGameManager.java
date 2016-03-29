@@ -75,7 +75,7 @@ public class GomokuGameManager implements GameManager {
   }
 
   public void setMap(int x, int y, Stone stone) {
-    getBoard().set(x, y, stone);
+    getBoard().forceSet(x, y, stone);
   }
 
   public BoardReader getMap() {

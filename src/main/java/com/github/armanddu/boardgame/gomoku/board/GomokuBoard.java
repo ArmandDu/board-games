@@ -8,7 +8,9 @@ import com.github.armanddu.boardgame.lib.stone.StoneColor;
 import com.github.armanddu.boardgame.lib.stone.StoneMove;
 import com.github.armanddu.boardgame.lib.stone.StonePosition;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class GomokuBoard implements Board {
@@ -20,6 +22,7 @@ public class GomokuBoard implements Board {
     private final BoardReader manipulator;
     private final GameRules rules;
     private final Map<StoneColor, Integer> scores;
+    private final List<Stone> stones;
 
     public GomokuBoard(GameRules rules) {
         this.width = 19;
@@ -27,6 +30,7 @@ public class GomokuBoard implements Board {
         this.rules = rules;
         this.map = new Stone[this.width][this.height];
         this.manipulator = new GomokuBoardReader(this);
+        stones = new ArrayList<>();
         scores = new HashMap<>();
         scores.put(StoneColor.WHITE, 0);
         scores.put(StoneColor.BLACK, 0);
@@ -40,8 +44,9 @@ public class GomokuBoard implements Board {
     }
 
     @Override
-    public void set(int x, int y, Stone stone) {
+    public void forceSet(int x, int y, Stone stone) {
         if (isInBoundaries(x, y)) {
+            stones.remove(get(x, y));
             put(x, y, stone);
         }
     }
@@ -75,10 +80,15 @@ public class GomokuBoard implements Board {
     }
     private void put(int x, int y, Stone stone) {
         this.map[x][y] = stone;
+        this.stones.add(stone);
     }
 
     public BoardReader getMap() {
         return this.manipulator;
+    }
+
+    public Stone getLastStone() {
+        return stones.isEmpty() ? null : stones.get(stones.size() - 1);
     }
 
     private boolean isInBoundaries(int x, int y) {
@@ -100,6 +110,11 @@ public class GomokuBoard implements Board {
 
     public void setScore(StoneColor color, int value) {
         if (scores.containsKey(color)) scores.put(color, value);
+    }
+
+    @Override
+    public List<Stone> getStones() {
+        return stones;
     }
 
 }

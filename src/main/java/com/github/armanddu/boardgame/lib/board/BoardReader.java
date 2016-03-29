@@ -4,6 +4,8 @@ import com.github.armanddu.boardgame.lib.stone.Stone;
 import com.github.armanddu.boardgame.lib.stone.StoneColor;
 import com.github.armanddu.boardgame.lib.stone.StoneMove;
 
+import java.util.List;
+
 public interface BoardReader {
 
   Stone get(int x, int y);
@@ -15,4 +17,6 @@ public interface BoardReader {
   boolean isValidMove(StoneMove stoneMove);
 
   int getScore(StoneColor color);
+
+  List<Stone> getStone();
 }

@@ -9,7 +9,7 @@ public interface StoneNode {
 
   List<List<Stone>> geCaptures();
 
-  Map<String,List<Stone>> getAll();
+  Map<String, StoneNodeChild> getChildren();
 
   boolean hasWeight(int i);
 }

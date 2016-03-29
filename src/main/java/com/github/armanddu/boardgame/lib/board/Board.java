@@ -4,27 +4,33 @@ import com.github.armanddu.boardgame.lib.stone.Stone;
 import com.github.armanddu.boardgame.lib.stone.StoneColor;
 import com.github.armanddu.boardgame.lib.stone.StoneMove;
 
+import java.util.List;
+
 public interface Board {
 
-  Stone get(int x, int y);
+    Stone get(int x, int y);
 
-  void set(int x, int y, Stone stone);
+    void forceSet(int x, int y, Stone stone);
 
-  int getWidth();
+    int getWidth();
 
-  int getHeight();
+    int getHeight();
 
-  boolean isValidMove(StoneMove move);
+    boolean isValidMove(StoneMove move);
 
-  StoneMove applyMove(StoneMove move);
+    StoneMove applyMove(StoneMove move);
 
-  BoardReader getMap();
+    BoardReader getMap();
 
-  void setHeight(int height);
+    Stone getLastStone();
 
-  void setWidth(int width);
+    void setHeight(int height);
 
-  int getScore(StoneColor color);
+    void setWidth(int width);
 
-  void setScore(StoneColor color, int value);
+    int getScore(StoneColor color);
+
+    void setScore(StoneColor color, int value);
+
+    List<Stone> getStones();
 }

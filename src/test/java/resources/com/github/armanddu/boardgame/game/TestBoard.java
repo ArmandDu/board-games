@@ -6,6 +6,8 @@ import com.github.armanddu.boardgame.lib.stone.Stone;
 import com.github.armanddu.boardgame.lib.stone.StoneColor;
 import com.github.armanddu.boardgame.lib.stone.StoneMove;
 
+import java.util.List;
+
 public class TestBoard implements Board {
 
   public Stone get(int x, int y) {
@@ -14,7 +16,7 @@ public class TestBoard implements Board {
   }
 
   @Override
-  public void set(int x, int y, Stone stone) {
+  public void forceSet(int x, int y, Stone stone) {
 
   }
 
@@ -48,6 +50,11 @@ public class TestBoard implements Board {
     return null;
   }
 
+  @Override
+  public Stone getLastStone() {
+    return null;
+  }
+
   public void setHeight(int height) {
     // TODO Auto-generated method stub
     
@@ -66,6 +73,11 @@ public class TestBoard implements Board {
   @Override
   public void setScore(StoneColor color, int value) {
 
+  }
+
+  @Override
+  public List<Stone> getStones() {
+    return null;
   }
 
 }

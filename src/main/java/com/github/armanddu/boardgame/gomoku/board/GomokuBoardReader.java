@@ -1,10 +1,14 @@
 package com.github.armanddu.boardgame.gomoku.board;
 
+import com.github.armanddu.boardgame.gomoku.stone.GomokuStone;
+import com.github.armanddu.boardgame.gomoku.stone.GomokuStoneMove;
 import com.github.armanddu.boardgame.lib.board.Board;
 import com.github.armanddu.boardgame.lib.board.BoardReader;
 import com.github.armanddu.boardgame.lib.stone.Stone;
 import com.github.armanddu.boardgame.lib.stone.StoneColor;
 import com.github.armanddu.boardgame.lib.stone.StoneMove;
+
+import java.util.List;
 
 public class GomokuBoardReader implements BoardReader {
 
@@ -37,6 +41,11 @@ public class GomokuBoardReader implements BoardReader {
     }
 
     @Override
+    public List<Stone> getStone() {
+        return board.getStones();
+    }
+
+    @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
         int width = this.getWidth();
@@ -47,10 +56,10 @@ public class GomokuBoardReader implements BoardReader {
         for (int i = 0; i < width; i++) {
             drawLine(builder, height);
 
-            drawYaxis(builder, i);
+            drawYAxis(builder, i);
             for (int j = 0; j < height; j++) {
                 Stone stone = this.get(j, i);
-                builder.append("| ").append(stone != null ? stone.getColor().toString().charAt(0) : "_")
+                builder.append("| ").append(stone != null ? stone.getColor().toString().charAt(0) : getFreeCaseString(j, i))
                         .append(" ");
             }
             builder.append("|\n");
@@ -60,8 +69,16 @@ public class GomokuBoardReader implements BoardReader {
         return builder.toString();
     }
 
-    private void drawYaxis(StringBuilder builder, int i) {
-        builder.append(i < 10 ? "  " : " ").append(i).append(" ");
+    private String getFreeCaseString(int x, int y) {
+        GomokuStoneMove white = new GomokuStoneMove(new GomokuStone(StoneColor.WHITE, 0, 0), x, y);
+        GomokuStoneMove black = new GomokuStoneMove(new GomokuStone(StoneColor.BLACK, 0, 0), x, y);
+        int v = isValidMove(white) ? 1 : 0;
+        v += isValidMove(black) ? 10 : 0;
+        return v == 11 ? "_" : v == 10 ? "b" : v == 1 ? "w" : " ";
+    }
+
+    private void drawYAxis(StringBuilder builder, int y) {
+        builder.append(y < 10 ? "  " : " ").append(y).append(" ");
     }
 
     private void drawLine(StringBuilder builder, int height) {
@@ -72,10 +89,10 @@ public class GomokuBoardReader implements BoardReader {
         builder.append("\n");
     }
 
-    private void drawXAxis(StringBuilder builder, int width) {
+    private void drawXAxis(StringBuilder builder, int height) {
         builder.append(" y\\x ");
-        for (int i = 0; i < width; i++) {
-            builder.append(i >= 10 ? "" : " ").append(i).append("  ");
+        for (int x = 0; x < height; x++) {
+            builder.append(x >= 10 ? "" : " ").append(x).append("  ");
         }
         builder.append("\n");
     }

@@ -43,7 +43,7 @@ public class TDD {
         Broadcaster broadcaster = null;
         Game game = new TestGame(referee, gameBox, player, opponents, broadcaster);
 
-        assertTrue(game.isValidRequirements());
+        assertTrue(game.isValid());
         assertFalse(game.isStarted());
         assertFalse(game.isEnded());
         game.start();

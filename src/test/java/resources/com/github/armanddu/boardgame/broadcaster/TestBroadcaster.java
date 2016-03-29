@@ -8,7 +8,7 @@ public class TestBroadcaster implements Broadcaster {
 
 
     @Override
-    public void broadcast(BoardReader map, StoneMove lastMove) {
+    public void broadcast(BoardReader map, StoneMove last) {
 
     }
 }

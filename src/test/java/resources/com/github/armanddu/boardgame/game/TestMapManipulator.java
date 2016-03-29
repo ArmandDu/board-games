@@ -6,6 +6,8 @@ import com.github.armanddu.boardgame.lib.stone.Stone;
 import com.github.armanddu.boardgame.lib.stone.StoneColor;
 import com.github.armanddu.boardgame.lib.stone.StoneMove;
 
+import java.util.List;
+
 public class TestMapManipulator implements BoardReader {
 
   public TestMapManipulator(Board board) {
@@ -35,6 +37,11 @@ public class TestMapManipulator implements BoardReader {
   @Override
   public int getScore(StoneColor color) {
     return 0;
+  }
+
+  @Override
+  public List<Stone> getStone() {
+    return null;
   }
 
   public boolean isValidMove(int x, int y) {

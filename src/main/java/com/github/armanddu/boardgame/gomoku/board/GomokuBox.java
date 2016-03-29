@@ -6,7 +6,7 @@ import java.util.List;
 import com.github.armanddu.boardgame.lib.rule.config.RuleConfig;
 import com.github.armanddu.boardgame.lib.game.GameBox;
 import com.github.armanddu.boardgame.lib.game.GameManager;
-import com.github.armanddu.boardgame.gomoku.rules.GomokuRules;
+import com.github.armanddu.boardgame.gomoku.rule.GomokuRules;
 import com.github.armanddu.boardgame.lib.board.Board;
 import com.github.armanddu.boardgame.lib.player.Players;
 import com.github.armanddu.boardgame.lib.rule.GameRules;

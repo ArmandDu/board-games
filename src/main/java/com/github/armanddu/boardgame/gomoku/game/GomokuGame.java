@@ -30,7 +30,7 @@ public class GomokuGame implements Game {
     this.broadcaster = broadcaster;
   }
 
-  public boolean isValidRequirements() {
+  public boolean isValid() {
     return referee.isValidGame();
   }
 

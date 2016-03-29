@@ -2,8 +2,10 @@ package com.github.armanddu.boardgame.lib.referee;
 
 import java.util.List;
 
+import com.github.armanddu.boardgame.gomoku.stone.GomokuStoneMove;
 import com.github.armanddu.boardgame.lib.game.GameBox;
 import com.github.armanddu.boardgame.lib.player.Player;
+import com.github.armanddu.boardgame.lib.stone.Stone;
 import com.github.armanddu.boardgame.lib.stone.StoneMove;
 
 public interface Referee {

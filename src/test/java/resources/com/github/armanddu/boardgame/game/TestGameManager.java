@@ -78,7 +78,7 @@ public class TestGameManager implements GameManager {
     }
 
     public void setMap(int i, int j, Stone stone) {
-        board.set(i, j, stone);
+        board.forceSet(i, j, stone);
     }
 
     public BoardReader getMap() {
