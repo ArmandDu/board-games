@@ -9,20 +9,20 @@ import com.github.armanddu.boardgame.lib.stone.StoneColor;
  */
 public class GomokuStartingPlayerRule implements ConfigRule {
 
-    private static final StoneColor color = StoneColor.BLACK;
+    public static final StoneColor COLOR = StoneColor.BLACK;
 
     @Override
     public boolean isValid(GameManager manager) {
-        return color.equals(manager.getPlayers().getStartingPlayer().getStoneColor());
+        return COLOR.equals(manager.getPlayers().getStartingPlayer().getStoneColor());
     }
 
     @Override
     public void set(GameManager manager) {
-        manager.getPlayers().setStartingPlayer(color);
+        manager.getPlayers().setStartingPlayer(COLOR);
     }
 
     @Override
     public String asString() {
-        return String.format("Starting player rule: %s plays first", color);
+        return String.format("Starting player rule: %s plays first", COLOR);
     }
 }

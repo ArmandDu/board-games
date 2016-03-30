@@ -11,7 +11,7 @@ import com.github.armanddu.boardgame.lib.stone.StonePosition;
 public class GomokuFirstMoveInCenterRule implements StoneRule {
     @Override
     public boolean isValid(BoardReader map, StoneMove move) {
-        return !map.getStone().isEmpty() || isCenter(map, move.getSuggestedPosition());
+        return !map.getStones().isEmpty() || isCenter(map, move.getSuggestedPosition());
     }
 
     private boolean isCenter(BoardReader map, StonePosition position) {

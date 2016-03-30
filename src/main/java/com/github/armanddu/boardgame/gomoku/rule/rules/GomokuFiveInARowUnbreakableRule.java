@@ -16,7 +16,8 @@ public class GomokuFiveInARowUnbreakableRule implements EndGameRule {
     }
 
     @Override
-    public boolean isValid(BoardReader map, StoneMove move) {
+    public boolean isValid(final BoardReader map, final StoneMove move) {
+        if (map == null || move == null) return false;
         StonePosition position = move.getSuggestedPosition();
         GomokuStone center = new GomokuStone(move.getColor(), position.getX(), position.getY());
         StoneNode node = new GomokuStoneNode(map, center);

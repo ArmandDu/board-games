@@ -5,6 +5,6 @@ import com.github.armanddu.boardgame.lib.stone.StoneMove;
 
 public interface EndGameRule extends Rule {
 
-  boolean isValid(BoardReader map, StoneMove move);
+  boolean isValid(final BoardReader map, final StoneMove move);
 
 }

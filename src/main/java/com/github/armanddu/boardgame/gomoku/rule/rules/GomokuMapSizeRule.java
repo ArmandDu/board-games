@@ -6,8 +6,8 @@ import com.github.armanddu.boardgame.lib.rule.ConfigRule;
 public class GomokuMapSizeRule implements ConfigRule {
 
 
-    private static final int HEIGHT = 19;
-    private static final int WIDTH = 19;
+    public static final int HEIGHT = 19;
+    public static final int WIDTH = 19;
 
     public String asString() {
         return String.format("Board Rule: Gomoku Board is %d by %d", WIDTH, HEIGHT);

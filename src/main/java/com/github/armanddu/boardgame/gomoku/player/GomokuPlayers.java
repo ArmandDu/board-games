@@ -1,9 +1,6 @@
 package com.github.armanddu.boardgame.gomoku.player;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import com.github.armanddu.boardgame.lib.player.Player;
 import com.github.armanddu.boardgame.lib.player.Players;
@@ -35,7 +32,7 @@ public class GomokuPlayers implements Players {
     }
 
     public Map<StoneColor, Player> asMap() {
-        return this.players;
+        return Collections.unmodifiableMap(this.players);
     }
 
     public Player get(StoneColor color) {

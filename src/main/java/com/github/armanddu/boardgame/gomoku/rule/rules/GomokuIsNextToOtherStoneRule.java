@@ -10,7 +10,7 @@ import com.github.armanddu.boardgame.lib.stone.StoneMove;
 public class GomokuIsNextToOtherStoneRule implements StoneRule {
     @Override
     public boolean isValid(BoardReader map, StoneMove move) {
-        return map.getStone().isEmpty() || isNextToOther(map, move);
+        return map.getStones().isEmpty() || isNextToOther(map, move);
     }
 
     private boolean isNextToOther(BoardReader map, StoneMove move) {

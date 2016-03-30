@@ -14,33 +14,33 @@ import com.github.armanddu.boardgame.lib.stone.StonePack;
 
 public class GomokuBox implements GameBox {
 
-  private final Board board;
-  private final GameRules rules;
-  private final List<StonePack> stonePacks;
+    private final Board board;
+    private final GameRules rules;
+    private final List<StonePack> stonePacks;
 
-  public GomokuBox() {
-    this.rules = new GomokuRules();
-    this.board = new GomokuBoard(rules);
-    stonePacks = new ArrayList<>();
-    GomokuGameManager manager = new GomokuGameManager(null, this);
-    RuleConfig config = rules.getConfig();
-    config.setStonePacks(manager);
-    config.setBoard(manager);
-  }
+    public GomokuBox() {
+        this.rules = new GomokuRules();
+        this.board = new GomokuBoard(rules);
+        stonePacks = new ArrayList<>();
+        GomokuGameManager manager = new GomokuGameManager(null, this);
+        RuleConfig config = rules.getConfig();
+        config.setStonePacks(manager);
+        config.setBoard(manager);
+    }
 
-  public Board getBoard() {
-    return board;
-  }
+    public Board getBoard() {
+        return board;
+    }
 
-  public GameRules getRules() {
-    return this.rules;
-  }
+    public GameRules getRules() {
+        return this.rules;
+    }
 
-  public List<StonePack> getStonePack() {
-    return stonePacks;
-  }
+    public List<StonePack> getStonePacks() {
+        return stonePacks;
+    }
 
-  public GameManager getManager(Players players) {
-    return new GomokuGameManager(players, this);
-  }
+    public GameManager getManager(Players players) {
+        return new GomokuGameManager(players, this);
+    }
 }

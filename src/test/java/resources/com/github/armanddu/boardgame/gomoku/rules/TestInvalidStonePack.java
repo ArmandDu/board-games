@@ -16,8 +16,10 @@ import java.util.List;
 public class TestInvalidStonePack implements StonePack {
 
     private List<StoneType> list;
+    private StoneColor color;
 
-    public TestInvalidStonePack() {
+    public TestInvalidStonePack(StoneColor color) {
+        this.color = color;
         list = new ArrayList<> ();
         list.add(new TestKingStone());
         list.add(new TestPawnStone());
@@ -25,7 +27,7 @@ public class TestInvalidStonePack implements StonePack {
 
     @Override
     public StoneColor getColor() {
-        return StoneColor.BLACK;
+        return color;
     }
 
     @Override

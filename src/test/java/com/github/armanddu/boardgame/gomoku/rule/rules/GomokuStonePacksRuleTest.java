@@ -4,8 +4,8 @@ import static org.junit.Assert.*;
 
 import java.util.List;
 
-import com.github.armanddu.boardgame.gomoku.rule.rules.GomokuStonePacksRule;
 import com.github.armanddu.boardgame.lib.rule.Rule;
+import com.github.armanddu.boardgame.lib.stone.StoneColor;
 import org.junit.Test;
 
 import com.github.armanddu.boardgame.lib.game.GameBox;
@@ -63,7 +63,22 @@ public class GomokuStonePacksRuleTest {
         GameManager manager = gameBox.getManager(null);
         ConfigRule rule = new GomokuStonePacksRule();
         List<StonePack> packs = manager.getStonePacks();
-        packs.add(new TestInvalidStonePack());
+        packs.clear();
+        packs.add(new TestInvalidStonePack(StoneColor.BLACK));
+        packs.add(new TestInvalidStonePack(StoneColor.WHITE));
+        assertFalse(rule.isValid(manager));
+    }
+
+    @Test
+    public  void shouldNotBeValidIfHaveInvalidStoneColorInPack()
+    {
+        GameBox gameBox = new GomokuBox();
+        GameManager manager = gameBox.getManager(null);
+        ConfigRule rule = new GomokuStonePacksRule();
+        List<StonePack> packs = manager.getStonePacks();
+        packs.clear();
+        packs.add(new TestInvalidStonePack(null));
+        packs.add(new TestInvalidStonePack(null));
         assertFalse(rule.isValid(manager));
     }
 

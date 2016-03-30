@@ -8,6 +8,7 @@ import com.github.armanddu.boardgame.lib.rule.Rule;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 /**
  * Created by armanddu on 28/03/16 for board-games.
@@ -21,7 +22,6 @@ public class GomokuConfigRuleSet implements ConfigRuleSet {
         this.set.put("mapSizeRule", new GomokuMapSizeRule());
         this.set.put("nbPlayerRule", new GomokuRequiredPlayerRule());
         this.set.put("initialStonePositionRule", new GomokuInitialStonePositionRule());
-        this.set.put("stonePacksRule", new GomokuStonePacksRule());
         this.set.put("startingPlayerRule", new GomokuStartingPlayerRule());
     }
 
@@ -41,6 +41,12 @@ public class GomokuConfigRuleSet implements ConfigRuleSet {
 
     @Override
     public Rule getLastInvalidRule(GameManager manager) {
-        return set.values().stream().filter(rule -> !isValid(manager)).findFirst().get();
+        Optional<ConfigRule> first = set.values().stream().filter(rule -> !rule.isValid(manager)).findFirst();
+        set.entrySet().stream().forEach(set -> {
+            if (!set.getValue().isValid(manager)) {
+                System.out.println("set.getKey() = " + set.getKey());
+            }
+        });
+        return first.isPresent() ? first.get() : null;
     }
 }

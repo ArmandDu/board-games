@@ -1,6 +1,7 @@
 package com.github.armanddu.boardgame.gomoku.rule;
 
 import com.github.armanddu.boardgame.gomoku.rule.rules.GomokuFiveInARowUnbreakableRule;
+import com.github.armanddu.boardgame.gomoku.rule.rules.GomokuOpponentAbandonRule;
 import com.github.armanddu.boardgame.gomoku.rule.rules.GomokuTenCapturesRule;
 import com.github.armanddu.boardgame.lib.board.BoardReader;
 import com.github.armanddu.boardgame.lib.rule.EndGameRule;
@@ -22,6 +23,7 @@ public class GomokuWinRuleSet implements EndGameRuleSet {
         set = new HashMap<>();
         set.put("isAlignmentWin", new GomokuFiveInARowUnbreakableRule());
         set.put("isCaptureWin", new GomokuTenCapturesRule());
+        set.put("isByAbandonWin", new GomokuOpponentAbandonRule());
     }
 
     @Override

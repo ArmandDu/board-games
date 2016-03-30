@@ -18,5 +18,5 @@ public interface BoardReader {
 
   int getScore(StoneColor color);
 
-  List<Stone> getStone();
+  List<Stone> getStones();
 }

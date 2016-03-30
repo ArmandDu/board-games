@@ -1,5 +1,6 @@
 package com.github.armanddu.boardgame.gomoku.board;
 
+import com.github.armanddu.boardgame.gomoku.rule.rules.GomokuMapSizeRule;
 import com.github.armanddu.boardgame.lib.board.Board;
 import com.github.armanddu.boardgame.lib.board.BoardReader;
 import com.github.armanddu.boardgame.lib.rule.GameRules;
@@ -25,13 +26,20 @@ public class GomokuBoard implements Board {
     private final List<Stone> stones;
 
     public GomokuBoard(GameRules rules) {
-        this.width = 19;
-        this.height = 19;
+        this.width = GomokuMapSizeRule.WIDTH;
+        this.height = GomokuMapSizeRule.HEIGHT;
         this.rules = rules;
         this.map = new Stone[this.width][this.height];
         this.manipulator = new GomokuBoardReader(this);
         stones = new ArrayList<>();
         scores = new HashMap<>();
+        scores.put(StoneColor.WHITE, 0);
+        scores.put(StoneColor.BLACK, 0);
+    }
+
+    private void reset() {
+        this.map = new Stone[this.width][this.height];
+        this.stones.clear();
         scores.put(StoneColor.WHITE, 0);
         scores.put(StoneColor.BLACK, 0);
     }
@@ -43,14 +51,10 @@ public class GomokuBoard implements Board {
         return null;
     }
 
-    @Override
-    public void forceSet(int x, int y, Stone stone) {
-        if (isInBoundaries(x, y)) {
-            stones.remove(get(x, y));
-            put(x, y, stone);
-        }
+    public void clear()
+    {
+        reset();
     }
-
 
     public int getWidth() {
         return this.width;
@@ -97,12 +101,12 @@ public class GomokuBoard implements Board {
 
     public void setHeight(int height) {
         this.height = height;
-        this.map = new Stone[this.width][this.height];
+        reset();
     }
 
     public void setWidth(int width) {
         this.width = width;
-        this.map = new Stone[this.width][this.height];
+        reset();
     }
     public int getScore(StoneColor color) {
         return scores.getOrDefault(color, 0);

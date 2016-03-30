@@ -19,8 +19,6 @@ public interface GameManager {
 
     Players getPlayers();
 
-    StoneColor getNextTurn();
-
     void updateStatus(StoneMove move);
 
     List<StonePack> getStonePacks();

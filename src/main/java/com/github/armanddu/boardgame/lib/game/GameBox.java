@@ -11,7 +11,7 @@ public interface GameBox {
 
   GameRules getRules();
 
-  List<StonePack> getStonePack();
+  List<StonePack> getStonePacks();
 
   GameManager getManager(Players players);
 

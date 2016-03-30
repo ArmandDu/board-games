@@ -56,7 +56,7 @@ public class TDD {
         Players players = new TestPlayers();
 
         GameRules rules = gameBox.getRules();
-        List<StonePack> stonePack = gameBox.getStonePack();
+        List<StonePack> stonePack = gameBox.getStonePacks();
         GameManager config = gameBox.getManager(players);
         BoardReader map = config.getMap();
     }
@@ -153,7 +153,7 @@ public class TDD {
         BoardReader map = new TestMapManipulator(null);
 
         String t_name = player.getName();
-        List<StonePack> remaining = player.chooseStonePack(stonePacks);
+        StonePack chosen = player.chooseStonePack(stonePacks);
         Player t_oponent = player.chooseOpponent(oponents);
         StonePack t_pack = player.getStonePack();
         StoneColor t_color = player.getStoneColor();

@@ -15,12 +15,15 @@ import java.util.stream.Collectors;
  * Created by armanddu on 28/03/16 for board-games.
  */
 public class GomokuDoubleThreeRule implements StoneRule {
+
+    private static final int ALIGNMENT_VALUE = 3;
+
     @Override
     public boolean isValid(BoardReader map, StoneMove move) {
         StonePosition position = move.getSuggestedPosition();
         StoneNode nodes = new GomokuStoneNode(map, new GomokuStone(move.getColor(), position.getX(), position.getY()));
         List<Map.Entry<String, StoneNodeChild>> matches = nodes.getChildren().entrySet().stream()
-                .filter(entry -> entry.getValue().getWeight() == 3 && entry.getValue().isFree())
+                .filter(entry -> entry.getValue().getWeight() == ALIGNMENT_VALUE && entry.getValue().isFree())
                 .collect(Collectors.toList());
         return matches.size() < 2 && !checkChildren(map, matches);
     }
@@ -33,7 +36,7 @@ public class GomokuDoubleThreeRule implements StoneRule {
                         .filter(node -> node.getChildren().entrySet().stream()
                                 .filter(child -> !Objects.equals(child.getKey(), parent.getKey()))
                                 .map(Map.Entry::getValue)
-                                .anyMatch(childNode -> childNode.getWeight() == 3 && childNode.isFree()))
+                                .anyMatch(childNode -> childNode.getWeight() == ALIGNMENT_VALUE && childNode.isFree()))
                         .count() > 0)
                 .count() > 0;
     }

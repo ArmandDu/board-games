@@ -37,27 +37,7 @@ public class TestGameManager implements GameManager {
         board.applyMove(move);
     }
 
-    public void applyCaptures(StoneMove move) {
-        // TODO Auto-generated method stub
-
-    }
-
-    public Player getStartingPlayer() {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
     public Players getPlayers() {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    public StoneColor getNextTurn() {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    public StoneMove getLastMove() {
         // TODO Auto-generated method stub
         return null;
     }
@@ -65,20 +45,6 @@ public class TestGameManager implements GameManager {
     public void updateStatus(StoneMove move) {
         // TODO Auto-generated method stub
 
-    }
-
-    public void setMapWidth(int width) {
-        // TODO Auto-generated method stub
-
-    }
-
-    public void setMapHeight(int height) {
-        // TODO Auto-generated method stub
-
-    }
-
-    public void setMap(int i, int j, Stone stone) {
-        board.forceSet(i, j, stone);
     }
 
     public BoardReader getMap() {

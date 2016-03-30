@@ -1,5 +1,6 @@
 package com.github.armanddu.boardgame.gomoku.referee;
 
+import java.util.Collections;
 import java.util.List;
 
 import com.github.armanddu.boardgame.gomoku.stone.GomokuStoneMove;
@@ -23,13 +24,29 @@ public class GomokuReferee implements Referee {
     private StoneColor current;
 
     public void initGame(GameBox gameBox, Player player, List<Player> opponents) {
-        Player opponent = player.chooseOpponent(opponents);
-        List<StonePack> remaining = player.chooseStonePack(gameBox.getStonePack());
-        opponent.chooseStonePack(remaining);
+        Player opponent = getOpponent(player, opponents);
+        List<StonePack> remaining = makeChooseStonePack(gameBox.getStonePacks(), player);
+        if (opponent == null ||
+                remaining == null ||
+                makeChooseStonePack(remaining, opponent) == null) return ;
         Players players = new GomokuPlayers(player, opponent);
         this.setManager(gameBox.getManager(players));
         this.setRules(gameBox.getRules());
         this.initStartingPlayer();
+    }
+
+    private List<StonePack> makeChooseStonePack(List<StonePack> stonePacks, Player player) {
+        player.chooseStonePack(Collections.unmodifiableList(stonePacks));
+        return stonePacks.remove(player.getStonePack()) ? stonePacks : null;
+    }
+
+    private Player getOpponent(Player player, List<Player> opponents) {
+        Player opponent = player.chooseOpponent(Collections.unmodifiableList(opponents));
+        return opponents.contains(opponent) ? opponent : null;
+    }
+
+    public boolean isValidGame() {
+        return this.rules != null && this.manager != null && this.rules.isValidGame(manager);
     }
 
     public void updateStatus(StoneMove stoneMove) {
@@ -49,7 +66,7 @@ public class GomokuReferee implements Referee {
     }
 
     public void applyCaptures(StoneMove move) {
-        // TODO :)
+        // TODO
     }
 
     public void initStartingPlayer() {
@@ -57,11 +74,16 @@ public class GomokuReferee implements Referee {
     }
 
     public void setNextPlayerTurn() {
-        this.current = this.manager.getNextTurn();
+        StoneMove lastMove = getLastMove();
+        if (current == lastMove.getColor() && this.rules.shouldChangeTurn(manager.getMap(), lastMove)) {
+            this.current = this.manager.getPlayers().asMap().keySet().stream()
+                    .filter(key -> key != current).findFirst().get();
+        }
+
     }
 
     public Player getCurrentPlayer() {
-        return this.manager.getPlayers().get(this.current);
+        return manager != null ? this.manager.getPlayers().get(this.current) : null;
     }
 
     public void updateGame() {
@@ -73,17 +95,21 @@ public class GomokuReferee implements Referee {
         this.setNextPlayerTurn();
     }
 
-    public boolean isValidGame() {
-        return this.rules.isValidGame(manager);
+    public boolean isEndGame() {
+        return isEndGameAccordingToRules() || hasAbandon();
     }
 
-    public boolean isEndGame() {
+    private boolean hasAbandon() {
+        return manager.getPlayers().asList().stream().anyMatch(Player::isAbandon);
+    }
+
+    private boolean isEndGameAccordingToRules() {
         return this.rules.isEndGame(manager.getMap(), this.getLastMove());
     }
 
     public StoneMove getLastMove() {
         Stone stone = this.manager.getBoard().getLastStone();
-        return  new GomokuStoneMove(stone, stone.getX(), stone.getY());
+        return  stone == null ? null : new GomokuStoneMove(stone, stone.getX(), stone.getY());
     }
 
     private void setManager(GameManager manager) {

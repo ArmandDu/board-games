@@ -39,8 +39,9 @@ public class TestGomokuBoardMap implements Board {
     }
 
     @Override
-    public void forceSet(int x, int y, Stone stone) {
-        map[x][y] = stone;
+    public void clear() {
+        this.map = new Stone[width][height];
+        stones.clear();
     }
 
     public int getWidth() {

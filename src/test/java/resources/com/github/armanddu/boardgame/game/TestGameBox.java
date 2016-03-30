@@ -27,7 +27,7 @@ public class TestGameBox implements GameBox {
     return null;
   }
 
-  public List<StonePack> getStonePack() {
+  public List<StonePack> getStonePacks() {
     // TODO Auto-generated method stub
     return null;
   }

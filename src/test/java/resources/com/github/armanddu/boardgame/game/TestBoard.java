@@ -16,7 +16,7 @@ public class TestBoard implements Board {
   }
 
   @Override
-  public void forceSet(int x, int y, Stone stone) {
+  public void clear() {
 
   }
 
@@ -31,11 +31,6 @@ public class TestBoard implements Board {
   }
 
   public boolean isValidMove(StoneMove move) {
-    // TODO Auto-generated method stub
-    return false;
-  }
-
-  public boolean isValidMove(int x, int y) {
     // TODO Auto-generated method stub
     return false;
   }

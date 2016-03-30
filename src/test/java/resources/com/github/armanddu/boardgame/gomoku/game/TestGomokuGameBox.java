@@ -18,7 +18,7 @@ public class TestGomokuGameBox implements GameBox {
   }
 
   @Override
-  public List<StonePack> getStonePack() {
+  public List<StonePack> getStonePacks() {
     // TODO Auto-generated method stub
     return null;
   }

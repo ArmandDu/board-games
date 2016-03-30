@@ -16,74 +16,39 @@ import com.github.armanddu.boardgame.lib.stone.StonePack;
 
 public class GomokuGameManager implements GameManager {
 
-  private final Players players;
-  private final Board board;
-  private final GameRules rules;
-  private final List<StonePack> stonePacks;
-  private StoneMove lastMove;
+    private final Players players;
+    private final Board board;
+    private final List<StonePack> stonePacks;
 
-  public GomokuGameManager(Players players, GameBox gameBox) {
-    this.players = players;
-    this.board = gameBox.getBoard();
-    this.rules = gameBox.getRules();
-    this.stonePacks = gameBox.getStonePack();
-    this.lastMove = null;
-  }
-
-  public Board getBoard() {
-    return this.board;
-  }
-
-  public void applyMove(StoneMove move) {
-    lastMove = this.board.applyMove(move);
-  }
-
-  public void applyCaptures(StoneMove move) {
-    if (this.rules.hasCaptures(board.getMap(), move)) {
-      // TODO Auto-generated method stub
+    public GomokuGameManager(Players players, GameBox gameBox) {
+        this.players = players;
+        this.board = gameBox.getBoard();
+        this.stonePacks = gameBox.getStonePacks();
     }
-  }
 
-  public Player getStartingPlayer() {
-    return this.players.getStartingPlayer();
-  }
+    public Board getBoard() {
+        return this.board;
+    }
 
-  public Players getPlayers() {
-    return this.players;
-  }
+    public void applyMove(StoneMove move) {
+        this.board.applyMove(move);
+    }
 
-  public StoneColor getNextTurn() {
-    // TODO Auto-generated method stub
-    return null;
-  }
+    public Players getPlayers() {
+        return this.players;
+    }
 
-  public StoneMove getLastMove() {
-    return this.lastMove;
-  }
+    public void updateStatus(StoneMove move) {
+        // TODO Auto-generated method stub
 
-  public void updateStatus(StoneMove move) {
-    // TODO Auto-generated method stub
+    }
 
-  }
+    public BoardReader getMap() {
+        return board.getMap();
+    }
 
-  public void setMapWidth(int width) {
-    this.getBoard().setWidth(width);
-  }
-
-  public void setMapHeight(int height) {
-    this.getBoard().setHeight(height);
-  }
-
-  public void setMap(int x, int y, Stone stone) {
-    getBoard().forceSet(x, y, stone);
-  }
-
-  public BoardReader getMap() {
-    return board.getMap();
-  }
-
-  public List<StonePack> getStonePacks() {
-    return stonePacks;
-  }
+    public List<StonePack> getStonePacks() {
+        return stonePacks;
+    }
 
 }

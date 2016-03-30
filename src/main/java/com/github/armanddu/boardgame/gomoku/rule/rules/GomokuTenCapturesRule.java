@@ -12,7 +12,7 @@ public class GomokuTenCapturesRule implements EndGameRule {
     public static final int MIN_CAPTURES = 10;
 
     @Override
-    public boolean isValid(BoardReader map, StoneMove move) {
+    public boolean isValid(final BoardReader map, final StoneMove move) {
         return move != null && map.getScore(move.getColor()) >= MIN_CAPTURES;
     }
 

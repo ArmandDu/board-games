@@ -10,7 +10,7 @@ public interface Board {
 
     Stone get(int x, int y);
 
-    void forceSet(int x, int y, Stone stone);
+    void clear();
 
     int getWidth();
 

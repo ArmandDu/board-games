@@ -23,12 +23,7 @@ public class GomokuInitialStonePositionRule implements ConfigRule {
     }
 
     public void set(GameManager config) {
-        BoardReader map = config.getBoard().getMap();
-        for (int i = 0; i < map.getWidth(); i++) {
-            for (int j = 0; j < map.getHeight(); j++) {
-                config.getBoard().forceSet(i, j, null);
-            }
-        }
+        config.getBoard().clear();
     }
 
 }

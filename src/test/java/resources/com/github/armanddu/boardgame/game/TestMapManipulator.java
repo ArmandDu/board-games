@@ -40,7 +40,7 @@ public class TestMapManipulator implements BoardReader {
   }
 
   @Override
-  public List<Stone> getStone() {
+  public List<Stone> getStones() {
     return null;
   }
 

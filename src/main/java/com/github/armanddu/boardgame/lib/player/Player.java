@@ -11,7 +11,7 @@ public interface Player {
 
   String getName();
 
-  List<StonePack> chooseStonePack(List<StonePack> packs);
+  StonePack chooseStonePack(List<StonePack> packs);
 
   Player chooseOpponent(List<Player> opponents);
 
@@ -21,4 +21,7 @@ public interface Player {
 
   StoneMove play(BoardReader map);
 
+  boolean isAbandon();
+
+  void abandon();
 }

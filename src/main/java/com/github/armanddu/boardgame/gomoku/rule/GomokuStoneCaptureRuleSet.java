@@ -8,6 +8,7 @@ import com.github.armanddu.boardgame.lib.stone.StoneMove;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 /**
  * Created by armanddu on 28/03/16 for board-games.
@@ -26,10 +27,10 @@ public class GomokuStoneCaptureRuleSet implements StoneRuleSet {
 
     @Override
     public Rule getLastInvalid(BoardReader map, StoneMove move) {
-        return set.values().stream()
+        Optional<StoneRule> first = set.values().stream()
                 .filter(rule -> !rule.isValid(map, move))
-                .findFirst()
-                .get();
+                .findFirst();
+        return first.isPresent() ? first.get() : null;
     }
 
     @Override

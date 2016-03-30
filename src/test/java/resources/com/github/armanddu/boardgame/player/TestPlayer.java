@@ -24,7 +24,7 @@ public class TestPlayer implements Player {
     this.name = name;
   }
 
-  public List<StonePack> chooseStonePack(List<StonePack> packs) {
+  public StonePack chooseStonePack(List<StonePack> packs) {
     // TODO Auto-generated method stub
     return null;
   }
@@ -47,6 +47,16 @@ public class TestPlayer implements Player {
   public StoneMove play(BoardReader map) {
     // TODO Auto-generated method stub
     return null;
+  }
+
+  @Override
+  public boolean isAbandon() {
+    return false;
+  }
+
+  @Override
+  public void abandon() {
+
   }
 
 }

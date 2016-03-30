@@ -42,9 +42,7 @@ public class GomokuRules implements GameRules {
     }
 
     public boolean isValidGame(GameManager manager) {
-        boolean valid = configRuleSet.isValid(manager);
-        if (!(valid)) this.lastInvalidRule = configRuleSet.getLastInvalidRule(manager);
-        return valid;
+        return null == (this.lastInvalidRule = configRuleSet.getLastInvalidRule(manager));
     }
 
     public boolean isValidMove(BoardReader map, StoneMove move) {
