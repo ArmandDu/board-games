@@ -75,7 +75,7 @@ public class GomokuReferee implements Referee {
 
     public void setNextPlayerTurn() {
         StoneMove lastMove = getLastMove();
-        if (current == lastMove.getColor() && this.rules.shouldChangeTurn(manager.getMap(), lastMove)) {
+        if (lastMove != null && lastMove.getColor() == current && this.rules.shouldChangeTurn(manager.getMap(), lastMove)) {
             this.current = this.manager.getPlayers().asMap().keySet().stream()
                     .filter(key -> key != current).findFirst().get();
         }
@@ -88,11 +88,18 @@ public class GomokuReferee implements Referee {
 
     public void updateGame() {
         BoardReader map = this.manager.getBoard().getMap();
-        StoneMove stoneMove = this.getCurrentPlayer().play(map);
+        StoneMove stoneMove = getPlay(map);
         this.updateStatus(stoneMove);
         this.applyMove(stoneMove);
         this.applyCaptures(stoneMove);
         this.setNextPlayerTurn();
+    }
+
+    private StoneMove getPlay(BoardReader map) {
+        Player player = this.getCurrentPlayer();
+        StoneMove move = player.play(map);
+        if (move != null ) move.getStone().setOwner(player);
+        return move;
     }
 
     public boolean isEndGame() {

@@ -17,6 +17,11 @@ public class TestGame implements Game {
     this.started = false;
   }
 
+  @Override
+  public void initGame() {
+
+  }
+
   public boolean isValid() {
     return true;
   }

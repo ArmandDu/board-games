@@ -30,10 +30,6 @@ public class GomokuGameManager implements GameManager {
         return this.board;
     }
 
-    public void applyMove(StoneMove move) {
-        this.board.applyMove(move);
-    }
-
     public Players getPlayers() {
         return this.players;
     }

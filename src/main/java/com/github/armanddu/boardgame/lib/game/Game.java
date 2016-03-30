@@ -2,14 +2,16 @@ package com.github.armanddu.boardgame.lib.game;
 
 public interface Game {
 
-  boolean isValid();
+    void initGame();
 
-  boolean isStarted();
+    boolean isValid();
 
-  boolean isEnded();
+    boolean isStarted();
 
-  void start();
+    boolean isEnded();
 
-  void reset();
+    void start();
+
+    void reset();
 
 }

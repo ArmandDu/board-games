@@ -1,25 +1,38 @@
 package resources.com.github.armanddu.boardgame.gomoku.player;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
+import com.github.armanddu.boardgame.gomoku.stone.GomokuStone;
+import com.github.armanddu.boardgame.gomoku.stone.GomokuStoneMove;
 import com.github.armanddu.boardgame.lib.board.BoardReader;
 import com.github.armanddu.boardgame.lib.player.Player;
 import com.github.armanddu.boardgame.lib.stone.StoneColor;
 import com.github.armanddu.boardgame.lib.stone.StoneMove;
 import com.github.armanddu.boardgame.lib.stone.StonePack;
+import com.github.armanddu.boardgame.lib.stone.StonePosition;
+
+import javax.swing.text.Position;
 
 public class TestGomokuPlayer implements Player {
 
+    private final List<StonePosition> moves;
     private String name;
     private StoneColor color;
     private StonePack pack;
     private boolean giveUp;
 
     public TestGomokuPlayer(String name, StoneColor color) {
+        this(name, color, new ArrayList<>());
+    }
+
+    public TestGomokuPlayer(String name, StoneColor color, List<StonePosition> moves) {
         this.name = name;
         this.color = color;
         this.giveUp = false;
+        this.moves = moves;
     }
 
     public String getName() {
@@ -27,7 +40,8 @@ public class TestGomokuPlayer implements Player {
     }
 
     public StonePack chooseStonePack(List<StonePack> packs) {
-        pack = packs.stream().filter(pack -> pack.getColor() == color).findFirst().get();
+        Optional<StonePack> first = packs.stream().filter(pack -> pack.getColor() == color).findFirst();
+        pack = first.isPresent() ? first.get() : null;
         return pack;
     }
 
@@ -44,8 +58,11 @@ public class TestGomokuPlayer implements Player {
     }
 
     public StoneMove play(BoardReader map) {
-        // TODO Auto-generated method stub
-        return null;
+        if (moves.isEmpty()) return null;
+        StonePosition pos = moves.get(0);
+        StoneMove move = new GomokuStoneMove(new GomokuStone(color, 0, 0), pos.getX(), pos.getY());
+        moves.remove(0);
+        return move;
     }
 
     @Override
