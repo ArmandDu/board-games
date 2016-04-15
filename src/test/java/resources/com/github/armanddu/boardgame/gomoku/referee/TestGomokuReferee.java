@@ -2,10 +2,10 @@ package resources.com.github.armanddu.boardgame.gomoku.referee;
 
 import java.util.List;
 
-import com.github.armanddu.boardgame.lib.game.GameBox;
-import com.github.armanddu.boardgame.lib.player.Player;
-import com.github.armanddu.boardgame.lib.referee.Referee;
-import com.github.armanddu.boardgame.lib.stone.StoneMove;
+import com.github.armanddu.boardgames.lib.game.GameBox;
+import com.github.armanddu.boardgames.lib.player.Player;
+import com.github.armanddu.boardgames.lib.referee.Referee;
+import com.github.armanddu.boardgames.lib.stone.StoneMove;
 
 public class TestGomokuReferee implements Referee {
 

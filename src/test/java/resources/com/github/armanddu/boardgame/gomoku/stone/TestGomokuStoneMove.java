@@ -1,14 +1,14 @@
 package resources.com.github.armanddu.boardgame.gomoku.stone;
 
-import com.github.armanddu.boardgame.gomoku.stone.GomokuStone;
-import com.github.armanddu.boardgame.gomoku.stone.GomokuStonePosition;
-import com.github.armanddu.boardgame.lib.player.Player;
-import com.github.armanddu.boardgame.lib.stone.Stone;
-import com.github.armanddu.boardgame.lib.stone.StoneColor;
-import com.github.armanddu.boardgame.lib.stone.StoneMove;
-import com.github.armanddu.boardgame.lib.stone.StonePosition;
-import com.github.armanddu.boardgame.lib.stone.StoneStatus;
-import com.github.armanddu.boardgame.lib.stone.StoneType;
+import com.github.armanddu.boardgames.gomoku.stone.GomokuStone;
+import com.github.armanddu.boardgames.gomoku.stone.GomokuStonePosition;
+import com.github.armanddu.boardgames.lib.player.Player;
+import com.github.armanddu.boardgames.lib.stone.Stone;
+import com.github.armanddu.boardgames.lib.stone.StoneColor;
+import com.github.armanddu.boardgames.lib.stone.StoneMove;
+import com.github.armanddu.boardgames.lib.stone.StonePosition;
+import com.github.armanddu.boardgames.lib.stone.StoneStatus;
+import com.github.armanddu.boardgames.lib.stone.StoneType;
 
 public class TestGomokuStoneMove implements StoneMove {
 

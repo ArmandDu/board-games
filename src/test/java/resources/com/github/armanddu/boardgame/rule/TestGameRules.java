@@ -1,11 +1,11 @@
 package resources.com.github.armanddu.boardgame.rule;
 
-import com.github.armanddu.boardgame.lib.rule.config.RuleConfig;
-import com.github.armanddu.boardgame.lib.game.GameManager;
-import com.github.armanddu.boardgame.lib.board.BoardReader;
-import com.github.armanddu.boardgame.lib.rule.GameRules;
-import com.github.armanddu.boardgame.lib.rule.Rule;
-import com.github.armanddu.boardgame.lib.stone.StoneMove;
+import com.github.armanddu.boardgames.lib.rule.config.RuleConfig;
+import com.github.armanddu.boardgames.lib.game.GameManager;
+import com.github.armanddu.boardgames.lib.board.BoardReader;
+import com.github.armanddu.boardgames.lib.rule.GameRules;
+import com.github.armanddu.boardgames.lib.rule.Rule;
+import com.github.armanddu.boardgames.lib.stone.StoneMove;
 
 public class TestGameRules implements GameRules {
 
@@ -58,7 +58,7 @@ public class TestGameRules implements GameRules {
     return null;
   }
 
-  public void configGame(GameManager config) {
+  public void configGame(GameManager game) {
     // TODO Auto-generated method stub
     
   }

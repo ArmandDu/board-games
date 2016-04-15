@@ -2,14 +2,14 @@ package resources.com.github.armanddu.boardgame.game;
 
 import java.util.List;
 
-import com.github.armanddu.boardgame.lib.game.GameBox;
-import com.github.armanddu.boardgame.lib.game.GameManager;
-import com.github.armanddu.boardgame.lib.board.Board;
-import com.github.armanddu.boardgame.lib.board.BoardReader;
-import com.github.armanddu.boardgame.lib.player.Players;
-import com.github.armanddu.boardgame.lib.rule.GameRules;
-import com.github.armanddu.boardgame.lib.stone.StoneMove;
-import com.github.armanddu.boardgame.lib.stone.StonePack;
+import com.github.armanddu.boardgames.lib.game.GameBox;
+import com.github.armanddu.boardgames.lib.game.GameManager;
+import com.github.armanddu.boardgames.lib.board.Board;
+import com.github.armanddu.boardgames.lib.board.BoardReader;
+import com.github.armanddu.boardgames.lib.player.Players;
+import com.github.armanddu.boardgames.lib.rule.GameRules;
+import com.github.armanddu.boardgames.lib.stone.StoneMove;
+import com.github.armanddu.boardgames.lib.stone.StonePack;
 
 public class TestGameBox implements GameBox {
 
@@ -46,14 +46,5 @@ public class TestGameBox implements GameBox {
     
   }
 
-  public void setHeight(int height) {
-    // TODO Auto-generated method stub
-    
-  }
-
-  public void setWidth(int width) {
-    // TODO Auto-generated method stub
-    
-  }
 
 }

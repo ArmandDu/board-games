@@ -3,9 +3,9 @@ package resources.com.github.armanddu.boardgame.player;
 import java.util.List;
 import java.util.Map;
 
-import com.github.armanddu.boardgame.lib.player.Player;
-import com.github.armanddu.boardgame.lib.player.Players;
-import com.github.armanddu.boardgame.lib.stone.StoneColor;
+import com.github.armanddu.boardgames.lib.player.Player;
+import com.github.armanddu.boardgames.lib.player.Players;
+import com.github.armanddu.boardgames.lib.stone.StoneColor;
 
 public class TestPlayers implements Players {
 

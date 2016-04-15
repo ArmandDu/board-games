@@ -1,9 +1,9 @@
 package resources.com.github.armanddu.boardgame.gomoku.rules;
 
-import com.github.armanddu.boardgame.lib.stone.Stone;
-import com.github.armanddu.boardgame.lib.stone.StoneColor;
-import com.github.armanddu.boardgame.lib.stone.StonePack;
-import com.github.armanddu.boardgame.lib.stone.StoneType;
+import com.github.armanddu.boardgames.lib.stone.Stone;
+import com.github.armanddu.boardgames.lib.stone.StoneColor;
+import com.github.armanddu.boardgames.lib.stone.StonePack;
+import com.github.armanddu.boardgames.lib.stone.StoneType;
 import resources.com.github.armanddu.boardgame.stone.TestKingStone;
 import resources.com.github.armanddu.boardgame.stone.TestPawnStone;
 
@@ -15,14 +15,14 @@ import java.util.List;
  */
 public class TestInvalidStonePack implements StonePack {
 
-    private List<StoneType> list;
+    private List<String> list;
     private StoneColor color;
 
     public TestInvalidStonePack(StoneColor color) {
         this.color = color;
         list = new ArrayList<> ();
-        list.add(new TestKingStone());
-        list.add(new TestPawnStone());
+        list.add(new TestKingStone().type());
+        list.add(new TestPawnStone().type());
     }
 
     @Override
@@ -31,7 +31,7 @@ public class TestInvalidStonePack implements StonePack {
     }
 
     @Override
-    public List<StoneType> getTypes() {
+    public List<String> getTypes() {
         return list;
     }
 

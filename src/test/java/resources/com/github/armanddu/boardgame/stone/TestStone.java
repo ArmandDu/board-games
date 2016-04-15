@@ -1,7 +1,7 @@
 package resources.com.github.armanddu.boardgame.stone;
 
-import com.github.armanddu.boardgame.lib.player.Player;
-import com.github.armanddu.boardgame.lib.stone.*;
+import com.github.armanddu.boardgames.lib.player.Player;
+import com.github.armanddu.boardgames.lib.stone.*;
 
 import java.util.List;
 
@@ -51,7 +51,7 @@ public class TestStone implements Stone {
     return null;
   }
   
-  public void apply(StonePosition suggestedPosition) {
+  public void apply(StonePosition position) {
     // TODO Auto-generated method stub
     
   }

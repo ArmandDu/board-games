@@ -1,14 +1,14 @@
 package resources.com.github.armanddu.boardgame.gomoku.board;
 
-import com.github.armanddu.boardgame.gomoku.board.GomokuBoardReader;
-import com.github.armanddu.boardgame.gomoku.rule.GomokuStonePositionRuleSet;
-import com.github.armanddu.boardgame.lib.board.Board;
-import com.github.armanddu.boardgame.lib.board.BoardReader;
-import com.github.armanddu.boardgame.lib.rule.StoneRuleSet;
-import com.github.armanddu.boardgame.lib.stone.Stone;
-import com.github.armanddu.boardgame.lib.stone.StoneColor;
-import com.github.armanddu.boardgame.lib.stone.StoneMove;
-import com.github.armanddu.boardgame.lib.stone.StonePosition;
+import com.github.armanddu.boardgames.gomoku.board.GomokuBoardReader;
+import com.github.armanddu.boardgames.gomoku.rule.GomokuStonePositionRuleSet;
+import com.github.armanddu.boardgames.lib.board.Board;
+import com.github.armanddu.boardgames.lib.board.BoardReader;
+import com.github.armanddu.boardgames.lib.rule.StoneRuleSet;
+import com.github.armanddu.boardgames.lib.stone.Stone;
+import com.github.armanddu.boardgames.lib.stone.StoneColor;
+import com.github.armanddu.boardgames.lib.stone.StoneMove;
+import com.github.armanddu.boardgames.lib.stone.StonePosition;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,6 +36,11 @@ public class TestGomokuBoardMap implements Board {
             return this.map[x][y];
         }
         return null;
+    }
+
+    @Override
+    public Stone get(StonePosition position) {
+        return get(position.getX(), position.getY());
     }
 
     @Override

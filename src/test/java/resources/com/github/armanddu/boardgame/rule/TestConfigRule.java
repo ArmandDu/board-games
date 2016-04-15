@@ -1,7 +1,7 @@
 package resources.com.github.armanddu.boardgame.rule;
 
-import com.github.armanddu.boardgame.lib.game.GameManager;
-import com.github.armanddu.boardgame.lib.rule.ConfigRule;
+import com.github.armanddu.boardgames.lib.game.GameManager;
+import com.github.armanddu.boardgames.lib.rule.ConfigRule;
 
 public class TestConfigRule implements ConfigRule {
 

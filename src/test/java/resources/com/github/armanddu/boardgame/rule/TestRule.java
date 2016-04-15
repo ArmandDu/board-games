@@ -1,6 +1,6 @@
 package resources.com.github.armanddu.boardgame.rule;
 
-import com.github.armanddu.boardgame.lib.rule.Rule;
+import com.github.armanddu.boardgames.lib.rule.Rule;
 
 public class TestRule implements Rule {
 

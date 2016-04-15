@@ -1,8 +1,8 @@
 package resources.com.github.armanddu.boardgame.rule;
 
-import com.github.armanddu.boardgame.lib.board.BoardReader;
-import com.github.armanddu.boardgame.lib.rule.StoneRule;
-import com.github.armanddu.boardgame.lib.stone.StoneMove;
+import com.github.armanddu.boardgames.lib.board.BoardReader;
+import com.github.armanddu.boardgames.lib.rule.StoneRule;
+import com.github.armanddu.boardgames.lib.stone.StoneMove;
 
 public class TestStoneRule implements StoneRule {
 

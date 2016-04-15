@@ -3,18 +3,15 @@ package resources.com.github.armanddu.boardgame.gomoku.player;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
-import com.github.armanddu.boardgame.gomoku.stone.GomokuStone;
-import com.github.armanddu.boardgame.gomoku.stone.GomokuStoneMove;
-import com.github.armanddu.boardgame.lib.board.BoardReader;
-import com.github.armanddu.boardgame.lib.player.Player;
-import com.github.armanddu.boardgame.lib.stone.StoneColor;
-import com.github.armanddu.boardgame.lib.stone.StoneMove;
-import com.github.armanddu.boardgame.lib.stone.StonePack;
-import com.github.armanddu.boardgame.lib.stone.StonePosition;
-
-import javax.swing.text.Position;
+import com.github.armanddu.boardgames.gomoku.stone.GomokuStone;
+import com.github.armanddu.boardgames.gomoku.stone.GomokuStoneMove;
+import com.github.armanddu.boardgames.lib.game.GameUtils;
+import com.github.armanddu.boardgames.lib.player.Player;
+import com.github.armanddu.boardgames.lib.stone.StoneColor;
+import com.github.armanddu.boardgames.lib.stone.StoneMove;
+import com.github.armanddu.boardgames.lib.stone.StonePack;
+import com.github.armanddu.boardgames.lib.stone.StonePosition;
 
 public class TestGomokuPlayer implements Player {
 
@@ -57,7 +54,8 @@ public class TestGomokuPlayer implements Player {
         return this.color;
     }
 
-    public StoneMove play(BoardReader map) {
+    @Override
+    public StoneMove play(GameUtils utils) {
         if (moves.isEmpty()) return null;
         StonePosition pos = moves.get(0);
         StoneMove move = new GomokuStoneMove(new GomokuStone(color, 0, 0), pos.getX(), pos.getY());

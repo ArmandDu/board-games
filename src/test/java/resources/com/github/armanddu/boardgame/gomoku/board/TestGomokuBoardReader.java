@@ -1,10 +1,9 @@
 package resources.com.github.armanddu.boardgame.gomoku.board;
 
-import com.github.armanddu.boardgame.lib.board.Board;
-import com.github.armanddu.boardgame.lib.board.BoardReader;
-import com.github.armanddu.boardgame.lib.stone.Stone;
-import com.github.armanddu.boardgame.lib.stone.StoneColor;
-import com.github.armanddu.boardgame.lib.stone.StoneMove;
+import com.github.armanddu.boardgames.lib.board.Board;
+import com.github.armanddu.boardgames.lib.board.BoardReader;
+import com.github.armanddu.boardgames.lib.stone.Stone;
+import com.github.armanddu.boardgames.lib.stone.StoneColor;
 
 import java.util.List;
 
@@ -29,11 +28,6 @@ public class TestGomokuBoardReader implements BoardReader {
     return map.getHeight();
   }
 
-  public boolean isValidMove(StoneMove stoneMove) {
-    // TODO Auto-generated method stub
-    return false;
-  }
-
   @Override
   public int getScore(StoneColor color) {
     return 0;
@@ -42,11 +36,6 @@ public class TestGomokuBoardReader implements BoardReader {
   @Override
   public List<Stone> getStones() {
     return null;
-  }
-
-  public boolean isValidMove(int x, int y) {
-    // TODO Auto-generated method stub
-    return false;
   }
 
 }

@@ -1,15 +1,12 @@
 package resources.com.github.armanddu.boardgame.game;
 
-import com.github.armanddu.boardgame.lib.game.GameBox;
-import com.github.armanddu.boardgame.lib.game.GameManager;
-import com.github.armanddu.boardgame.lib.board.Board;
-import com.github.armanddu.boardgame.lib.board.BoardReader;
-import com.github.armanddu.boardgame.lib.player.Player;
-import com.github.armanddu.boardgame.lib.player.Players;
-import com.github.armanddu.boardgame.lib.stone.Stone;
-import com.github.armanddu.boardgame.lib.stone.StoneColor;
-import com.github.armanddu.boardgame.lib.stone.StoneMove;
-import com.github.armanddu.boardgame.lib.stone.StonePack;
+import com.github.armanddu.boardgames.lib.game.GameBox;
+import com.github.armanddu.boardgames.lib.game.GameManager;
+import com.github.armanddu.boardgames.lib.board.Board;
+import com.github.armanddu.boardgames.lib.board.BoardReader;
+import com.github.armanddu.boardgames.lib.player.Players;
+import com.github.armanddu.boardgames.lib.stone.StoneMove;
+import com.github.armanddu.boardgames.lib.stone.StonePack;
 
 import java.util.List;
 

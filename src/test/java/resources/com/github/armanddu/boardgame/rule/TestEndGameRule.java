@@ -1,8 +1,8 @@
 package resources.com.github.armanddu.boardgame.rule;
 
-import com.github.armanddu.boardgame.lib.board.BoardReader;
-import com.github.armanddu.boardgame.lib.rule.EndGameRule;
-import com.github.armanddu.boardgame.lib.stone.StoneMove;
+import com.github.armanddu.boardgames.lib.board.BoardReader;
+import com.github.armanddu.boardgames.lib.rule.EndGameRule;
+import com.github.armanddu.boardgames.lib.stone.StoneMove;
 
 public class TestEndGameRule implements EndGameRule {
 
