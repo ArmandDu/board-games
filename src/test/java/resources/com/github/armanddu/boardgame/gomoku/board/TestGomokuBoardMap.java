@@ -1,7 +1,7 @@
 package resources.com.github.armanddu.boardgame.gomoku.board;
 
-import com.github.armanddu.boardgames.gomoku.board.GomokuBoardReader;
-import com.github.armanddu.boardgames.gomoku.rule.GomokuStonePositionRuleSet;
+import com.github.armanddu.boardgames.go.board.GoBoardReader;
+import com.github.armanddu.boardgames.go.rule.GoStonePositionRuleSet;
 import com.github.armanddu.boardgames.lib.board.Board;
 import com.github.armanddu.boardgames.lib.board.BoardReader;
 import com.github.armanddu.boardgames.lib.rule.StoneRuleSet;
@@ -26,9 +26,9 @@ public class TestGomokuBoardMap implements Board {
         this.width = 7;
         this.height = 7;
         this.map = new Stone[this.width][this.height];
-        this.reader = new GomokuBoardReader(this);
+        this.reader = new GoBoardReader(this);
         this.stones = new ArrayList<>();
-        this.rules = new GomokuStonePositionRuleSet();
+        this.rules = new GoStonePositionRuleSet();
     }
 
     public Stone get(int x, int y) {

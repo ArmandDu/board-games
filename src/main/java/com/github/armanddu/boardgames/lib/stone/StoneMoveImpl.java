@@ -1,7 +1,6 @@
 package com.github.armanddu.boardgames.lib.stone;
 
 import com.github.armanddu.boardgames.lib.player.Player;
-import com.sun.istack.internal.NotNull;
 
 /**
  * Created by armanddu on 31/03/16 for board-games.
@@ -14,7 +13,7 @@ public class StoneMoveImpl implements StoneMove {
         this(new StonePositionImpl(x, y), stone);
     }
 
-    public  StoneMoveImpl(StonePosition suggested, @NotNull Stone stone)
+    public  StoneMoveImpl(StonePosition suggested, Stone stone)
     {
         this.suggested = suggested;
         this.stone = stone;

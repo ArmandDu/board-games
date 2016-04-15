@@ -1,11 +1,11 @@
 package com.github.armanddu.boardgames.lib.rule.config;
 
-import com.github.armanddu.boardgames.gomoku.game.GomokuGameManager;
+import com.github.armanddu.boardgames.go.game.GoGameManager;
 
 public interface RuleConfig {
 
-  void setStonePacks(GomokuGameManager manager);
+  void setStonePacks(GoGameManager manager);
 
-  void setBoard(GomokuGameManager manager);
+  void setBoard(GoGameManager manager);
 
 }

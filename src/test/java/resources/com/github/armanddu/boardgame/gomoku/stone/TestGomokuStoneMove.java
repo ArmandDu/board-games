@@ -1,7 +1,7 @@
 package resources.com.github.armanddu.boardgame.gomoku.stone;
 
-import com.github.armanddu.boardgames.gomoku.stone.GomokuStone;
-import com.github.armanddu.boardgames.gomoku.stone.GomokuStonePosition;
+import com.github.armanddu.boardgames.go.stone.GoStone;
+import com.github.armanddu.boardgames.go.stone.GoStonePosition;
 import com.github.armanddu.boardgames.lib.player.Player;
 import com.github.armanddu.boardgames.lib.stone.Stone;
 import com.github.armanddu.boardgames.lib.stone.StoneColor;
@@ -13,15 +13,15 @@ import com.github.armanddu.boardgames.lib.stone.StoneType;
 public class TestGomokuStoneMove implements StoneMove {
 
   private StonePosition suggested;
-  private GomokuStone stone;
+  private GoStone stone;
 
   public TestGomokuStoneMove(int x, int y) {
    this(StoneColor.WHITE, x, y);
   }
 
   public TestGomokuStoneMove(StoneColor color, int x, int y) {
-    this.suggested = new GomokuStonePosition(x, y);
-    this.stone = new GomokuStone(color, -1, -1);
+    this.suggested = new GoStonePosition(x, y);
+    this.stone = new GoStone(color, -1, -1);
   }
 
   public StonePosition getCurrentPosition() {

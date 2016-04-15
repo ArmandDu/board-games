@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import com.github.armanddu.boardgames.gomoku.stone.GomokuStone;
-import com.github.armanddu.boardgames.gomoku.stone.GomokuStoneMove;
+import com.github.armanddu.boardgames.go.stone.GoStone;
+import com.github.armanddu.boardgames.go.stone.GoStoneMove;
 import com.github.armanddu.boardgames.lib.game.GameUtils;
 import com.github.armanddu.boardgames.lib.player.Player;
 import com.github.armanddu.boardgames.lib.stone.StoneColor;
@@ -58,7 +58,7 @@ public class TestGomokuPlayer implements Player {
     public StoneMove play(GameUtils utils) {
         if (moves.isEmpty()) return null;
         StonePosition pos = moves.get(0);
-        StoneMove move = new GomokuStoneMove(new GomokuStone(color, 0, 0), pos.getX(), pos.getY());
+        StoneMove move = new GoStoneMove(new GoStone(color, 0, 0), pos.getX(), pos.getY());
         moves.remove(0);
         return move;
     }
